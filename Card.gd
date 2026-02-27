@@ -11,7 +11,7 @@ var description : String
 var texture : Texture2D
 var type : CardType
 @abstract func play(enemy, player)
-		
+
 
 class BasicAttack extends Card:
 	func _init():
