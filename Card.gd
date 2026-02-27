@@ -16,6 +16,7 @@ var type : CardType
 class BasicAttack extends Card:
 	func _init():
 		name = "Attack"
+		type = CardType.Damage
 		texture = preload("uid://b02bqxg8taui5")
 		
 	func play(enemy, player):
@@ -24,6 +25,7 @@ class BasicAttack extends Card:
 class BasicDefend extends Card:
 	func _init():
 		name = "Defend"
+		type = CardType.Defence
 		texture = preload("uid://d1ecyrmtogs7c")
 		
 	func play(enemy, player):
