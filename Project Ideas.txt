@@ -1,0 +1,25 @@
+Card game
+Deck builder, every fight 3 cards get drawn from the box, you choose 1 the others become enemies
+Boss every 5/10 fights
+Could have an endless mode
+Card synergies?
+Cards deal damage/
+Potentials:
+-	Pick which enemy you fight from 3 options, after the fight you get a card from their pool
+-	Pick from 3 card pools to add a card from that card pool to your deck, the other 2 get thrown together.
+-	Potential for a event after every 3 fights, one is just a musical.
+-	Potential cards per turn limit, or cards cost energy?
+-	Enemy cards get empowered based on the cost of the card
+-	Can find relics after boss fights
+-	A boss sets the floor to lava so you take damage every turn
+-	Monkey enemy that can throw bananas that cause the next attack to miss
+-	An event could be a fishing minigame, based on rhythm that heals based on your result
+-	4th wall break humour
+-	a power-up card that makes all of your attacks bounce?
+-	some powerful relics have a downside
+- 	the opening box just says interact to receive power, on the inside lid it says "also summons monsters"
+Art:
+-	3d monsters
+- 	1 room, Greek theme.
+-	2d cards
+-	
