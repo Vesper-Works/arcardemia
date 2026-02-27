@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://u22hdp8ivrw7"]
+
+[ext_resource type="PackedScene" uid="uid://43jtshf65k41" path="res://Assets/Models/Scene.glb" id="1_2t748"]
+
+[node name="EthanTest" type="Node3D" unique_id=1657266783]
+
+[node name="Scene" parent="." unique_id=810676294 instance=ExtResource("1_2t748")]
