@@ -14,14 +14,12 @@ class PlayerDeck extends Deck:
 	func _init():
 		for i in 5:
 			if i >= 3:
-				deck_list.append(Card.BasicAttack)
+				deck_list.append(Card.BasicAttack.new())
 			else:
-				deck_list.append(Card.BasicDefend)
+				deck_list.append(Card.BasicDefend.new())
+		deck_list.shuffle()
 	func view():
-		var deck_view = deck_list
-		deck_view.sort()
-		for i in deck_view:
-			print("the cards name is: " + i.name)
+		return deck_list[0].texture
 
 class Discard extends Deck:
 	
