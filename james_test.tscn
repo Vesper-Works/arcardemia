@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://rxo2gk2m050p"]
+[gd_scene format=3 uid="uid://csdwhdgah2wkm"]
 
-[ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Main_HUD.gd" id="1_6vqpa"]
+[ext_resource type="Script" uid="uid://d2yiungmpaxgu" path="res://CardControl.gd" id="1_5b4xx"]
+[ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://card_controller.gd" id="2_4x4uv"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_6vqpa"]
 
@@ -13,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_6vqpa")
+script = ExtResource("1_5b4xx")
 
 [node name="DrawWindow" type="Control" parent="MainHUD" unique_id=1309547904]
 visible = false
@@ -53,5 +54,8 @@ offset_bottom = -37.0
 grow_horizontal = 0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
+
+[node name="CardController" type="Node" parent="MainHUD" unique_id=1223785607]
+script = ExtResource("2_4x4uv")
 
 [connection signal="pressed" from="MainHUD/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]

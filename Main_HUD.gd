@@ -1,4 +1,5 @@
 extends Control
+# handles all visuals
 
 @onready var draw_window: Control = $DrawWindow
 
