@@ -15,7 +15,7 @@ func _process(delta: float) -> void:
 func _on_draw_button_pressed() -> void:
 	print("Button Pressed")
 	if draw_window.visible:
-		draw_window.visabile = false
+		draw_window.visible = false
 	else:
-		draw_window.visibile = true
+		draw_window.visible = true
 	pass # Replace with function body.
