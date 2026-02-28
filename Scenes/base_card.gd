@@ -14,13 +14,9 @@ func style_to_card(card : Card):
 		Card.CardSuit.a:
 			card_suit.text = "α"		
 		Card.CardSuit.b:
-			card_suit.text = "α"		
-		Card.CardSuit.c:
-			card_suit.text = "α"		
-		Card.CardSuit.d:
-			card_suit.text = "α"		
-		Card.CardSuit.e:
-			card_suit.text = "α"		
-		Card.CardSuit.f:
-			card_suit.text = "α"
+			card_suit.text = "β"		
+		Card.CardSuit.g:
+			card_suit.text = "γ"
+		Card.CardSuit.none:
+			card_suit.text = ""	
 	pass
