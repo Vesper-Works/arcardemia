@@ -2,7 +2,7 @@ class_name BaseCard
 
 extends Panel
 
-signal on_played
+signal on_played(myself)
 
 @onready var card_title: Label = %CardTitle
 @onready var card_art: TextureRect = %CardArt
@@ -42,18 +42,19 @@ func _on_gui_input(event: InputEvent) -> void:
 		if event.is_pressed():
 			click_start_time = Time.get_ticks_msec()
 			initial_mouse_offset = get_local_mouse_position()
-			print("pressed")
+			#print("pressed")
 		if event.is_released():
 			if Time.get_ticks_msec() - click_start_time <= 100 or position.y < -size.y * 0.8:
-				on_played.emit()
+				on_played.emit(self)
 				print("played!")
 			else:
+				print("failed to play")
 				#position = Vector2(0,0)
 				get_parent().visible = false
 				get_parent().call_deferred("set_visible", true) #recalculated position from container!
 				
 			click_start_time = 0
 			initial_mouse_offset = Vector2(0,0)
-			print("released")
+			#print("released")
 	
 	pass # Replace with function body.
