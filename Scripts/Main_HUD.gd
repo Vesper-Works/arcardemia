@@ -1,6 +1,7 @@
 extends Control
 # handles all visuals
 
+@onready var controller: Node = $CardController
 @onready var draw_window: Control = $DrawWindow
 
 # Called when the node enters the scene tree for the first time.
@@ -15,6 +16,9 @@ func _process(delta: float) -> void:
 
 func _on_draw_button_pressed() -> void:
 	print("Button Pressed")
+	
+	controller.DrawCards()
+	
 	if draw_window.visible:
 		draw_window.visible = false
 	else:
