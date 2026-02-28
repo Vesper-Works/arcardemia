@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bldvcpm88gcg6"
-path="res://.godot/imported/Cerberus.glb-97741f05184ad44f6d152e3c9e5a6ae9.scn"
+uid="uid://bb6reldvs8sfo"
+path="res://.godot/imported/Python.glb-a649f54a3ca0aee2fd69e0cfde643cd4.scn"
 
 [deps]
 
-source_file="res://Assets/Models/Cerberus.glb"
-dest_files=["res://.godot/imported/Cerberus.glb-97741f05184ad44f6d152e3c9e5a6ae9.scn"]
+source_file="res://Assets/Models/Python.glb"
+dest_files=["res://.godot/imported/Python.glb-a649f54a3ca0aee2fd69e0cfde643cd4.scn"]
 
 [params]
 
