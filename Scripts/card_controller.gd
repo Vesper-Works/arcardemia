@@ -31,7 +31,7 @@ func _process(delta: float) -> void:
 	
 
 
-func _on_new_player_hand() -> void:
+func new_player_hand() -> void:
 	for i in player_hand.deck_list.size():
 		discard_deck.add_card(player_hand.Draw(player_hand.deck_list.size()))
 	if player_deck.deck_list.size() >= hand_size:
