@@ -1,4 +1,4 @@
-extends "res://Main_HUD.gd"
+extends "res://Scripts/Main_HUD.gd"
 
 
 # Called when the node enters the scene tree for the first time.
