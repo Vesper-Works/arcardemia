@@ -50,6 +50,8 @@ class PlayerDeck extends Deck:
 
 class Discard extends Deck:
 	
+	func draw(amount = "one"):
+		print("different func")
 	func view():
 		for i in deck_list:
 			print("the cards name is: " + i.name)
