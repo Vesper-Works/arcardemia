@@ -5,6 +5,21 @@ enum CardType
 	Damage,
 	Defence
 }
+enum CardSuit
+{
+	Alpha,
+	Beta,
+	Gamma,
+	Delta,
+	Epsilon,
+	Zeta,
+	Eta,
+	Theta,
+	Iota,
+	Kappa,
+	Lambda,
+	Mu
+}
 
 enum CardSuit
 {
@@ -48,3 +63,4 @@ class BasicDefend extends Card:
 		
 	func play(enemy, player):
 		player.shield(10)
+		

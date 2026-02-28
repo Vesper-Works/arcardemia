@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://dtdyi8y1exjbj"]
+[gd_scene format=3 uid="uid://csdwhdgah2wkm"]
 
-[ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Scripts/Main_HUD.gd" id="1_a4vxn"]
-[ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="2_8wjo8"]
+[ext_resource type="Script" uid="uid://d2yiungmpaxgu" path="res://Scripts/CardControl.gd" id="1_1wt1p"]
+[ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="2_g1uh6"]
+[ext_resource type="Script" uid="uid://onbuaj0tc2v7" path="res://Scripts/Slot.gd" id="3_odqod"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_6vqpa"]
 
@@ -14,7 +15,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a4vxn")
+script = ExtResource("1_1wt1p")
+metadata/_edit_use_anchors_ = true
 
 [node name="DrawWindow" type="Control" parent="MainHUD" unique_id=1309547904]
 visible = false
@@ -39,6 +41,7 @@ offset_right = 99.0
 offset_bottom = -36.0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
+metadata/_edit_use_anchors_ = true
 
 [node name="DiscardButton" type="Button" parent="MainHUD" unique_id=265807333]
 layout_mode = 1
@@ -54,15 +57,26 @@ offset_bottom = -37.0
 grow_horizontal = 0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
+metadata/_edit_use_anchors_ = true
 
 [node name="CardController" type="Node" parent="MainHUD" unique_id=1223785607]
-script = ExtResource("2_8wjo8")
+script = ExtResource("2_g1uh6")
 
-[node name="EndTurn" type="Button" parent="MainHUD" unique_id=263103547]
-layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+[node name="CardSlots" type="HBoxContainer" parent="MainHUD" unique_id=337793394]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 1152.0
+grow_vertical = 0
+
+[node name="Slot1" type="Control" parent="MainHUD/CardSlots" unique_id=883427741]
+layout_mode = 2
+script = ExtResource("3_odqod")
+
+[node name="Slot2" type="Control" parent="MainHUD/CardSlots" unique_id=736291655]
+layout_mode = 2
+script = ExtResource("3_odqod")
 
 [connection signal="pressed" from="MainHUD/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]
-[connection signal="hand_display" from="MainHUD/CardController" to="MainHUD" method="_on_card_controller_hand_display"]
-[connection signal="pressed" from="MainHUD/EndTurn" to="MainHUD/CardController" method="_on_end_turn_pressed"]
