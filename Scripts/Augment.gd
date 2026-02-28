@@ -1,7 +1,9 @@
-@abstract class_name Augment
+class_name Augment
 extends Node
 
-enum AugmentName
+var Name: AugmentList
+
+enum AugmentList
 {
 	none,
 	Draw3,
@@ -9,3 +11,5 @@ enum AugmentName
 }
 
 	
+func select_name(select: int):
+	self.Name = AugmentList.values()[select]
