@@ -31,7 +31,7 @@ grow_vertical = 2
 
 [node name="Panel" type="ColorRect" parent="MainHUD/DrawWindow" unique_id=399884138]
 modulate = Color(1, 1, 0.050980393, 1)
-self_modulate = Color(0.7585313, 0.756418, 7.70092e-07, 1)
+top_level = true
 material = SubResource("CanvasItemMaterial_8wjo8")
 layout_mode = 1
 anchors_preset = 15
@@ -64,6 +64,12 @@ offset_bottom = -34.0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
 
+[node name="Label" type="Label" parent="MainHUD/DrawButton" unique_id=1983113501]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 17.0
+text = "Draw"
+
 [node name="DiscardButton" type="Button" parent="MainHUD" unique_id=265807333]
 layout_mode = 1
 anchors_preset = 3
@@ -78,6 +84,17 @@ offset_bottom = -36.0
 grow_horizontal = 0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
+
+[node name="Label" type="Label" parent="MainHUD/DiscardButton" unique_id=181692828]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Discard"
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="CardController" type="Node" parent="MainHUD" unique_id=1223785607]
 script = ExtResource("2_8wjo8")
