@@ -59,3 +59,4 @@ icon = SubResource("ImageTexture_6vqpa")
 script = ExtResource("2_8wjo8")
 
 [connection signal="pressed" from="MainHUD/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]
+[connection signal="pressed" from="MainHUD/EndTurn" to="MainHUD/CardController" method="_on_end_turn_pressed"]
