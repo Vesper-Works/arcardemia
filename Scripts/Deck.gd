@@ -4,22 +4,34 @@
 # the core deck list array
 var deck_list : Array[Card]
 
-# draws x cards from the deck, returns a card 
-func draw(amount: int = 1):
+# draws x cards from the deck, returns an array of cards if amount is specified.
+# accepts int inputs and 2 string inputs (one / all)
+# by default returns a single card not in an array
+# can accept "all" as a command
+func draw(amount = "one"):
 	var returned : Array[Card]
 	match typeof(amount):
 		TYPE_STRING:
-			for i in deck_list.size():
-				returned.append(deck_list.pop_front())
+			match amount: 
+				"all":
+					for i in deck_list.size():
+						returned.append(deck_list.pop_front())
+				"one":
+					return deck_list.pop_front()
+				_:
+					printerr("Unacceptable input in Deck.draw: '"+amount+"'")
+					
 		TYPE_INT:
-			if amount > 1 and amount <= deck_list.size():
+			if amount <= deck_list.size():
 				for i in amount:
 					returned.append(deck_list.pop_front())
 			elif amount > deck_list.size():
 					printerr("Invalid DeckSize drawn")
 					return deck_list.size()
 			else:
-				return deck_list.pop_front()
+				printerr("something went wrong in Deck.draw")
+		_:
+			printerr("Invalid type passed to Deck.draw: '" + amount + "'")
 	return returned
 
 @abstract func view()

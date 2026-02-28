@@ -21,22 +21,6 @@ enum CardSuit
 	Mu
 }
 
-enum CardSuit
-{
-	Alpha,
-	Beta,
-	Gamma,
-	Delta,
-	Epsilon,
-	Zeta,
-	Eta,
-	Theta,
-	Iota,
-	Kappa,
-	Lambda,
-	Mu
-}
-
 var name: String
 var description : String
 var texture : Texture2D
