@@ -30,10 +30,14 @@ func _on_draw_button_pressed() -> void:
 			print(i.name)
 	pass # Replace with function body.
 
+func show_hand(cards_to_show: Array[Card]):
+	for i in cards_to_show:
+		add_card_to_hand(i)
 
 func add_card_to_hand(card_to_show: Card):
 	for i in card_slots:
 		if not i.visible:
-			i.icon = card_to_show.texture
+			i.get_child(0).style_to_card(card_to_show)
+			i.visible = true
 			return true
 	return false

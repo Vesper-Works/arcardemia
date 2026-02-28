@@ -6,6 +6,8 @@
 [ext_resource type="Animation" uid="uid://bwbocibumul70" path="res://Raise.anim" id="3_rgh2o"]
 [ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Scripts/Main_HUD.gd" id="4_50glp"]
 [ext_resource type="PackedScene" uid="uid://fmgn00eem4wg" path="res://Scenes/base_card.tscn" id="5_v1gob"]
+[ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="5_vy5pj"]
+[ext_resource type="Script" uid="uid://6gvsv81h82qa" path="res://Scenes/base_card.gd" id="7_4kpch"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="7_bmxlf"]
 [ext_resource type="Script" uid="uid://dqfwxissm2g5v" path="res://Scenes/button.gd" id="8_vy5pj"]
 
@@ -442,87 +444,118 @@ grow_vertical = 0
 alignment = 1
 
 [node name="CardSlot1" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=1709905566]
-custom_minimum_size = Vector2(75, 225)
+visible = false
+custom_minimum_size = Vector2(0, 225)
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot1" unique_id=2066724175 instance=ExtResource("5_v1gob")]
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot1" unique_id=855220605]
+unique_name_in_owner = true
 layout_mode = 0
-anchors_preset = 0
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-offset_left = 632.0
-offset_top = 0.0
-offset_right = 782.0
-offset_bottom = 225.0
-grow_horizontal = 1
-grow_vertical = 1
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot2" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=553898199]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot2" unique_id=319016161 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot2" unique_id=386703920]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot3" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=2125232298]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot3" unique_id=631519481 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot3" unique_id=2059374436]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot4" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=963858968]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot4" unique_id=1789475239 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot4" unique_id=885978677]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot5" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=538815556]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot5" unique_id=1361947682 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot5" unique_id=367145417]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot6" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=1719693772]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot6" unique_id=1296872734 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot6" unique_id=73447085]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot7" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=1186293940]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot7" unique_id=929950208 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot7" unique_id=646766968]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="CardSlot8" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=986895773]
-custom_minimum_size = Vector2(75, 0)
+visible = false
 layout_mode = 2
+icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
-[node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot8" unique_id=1076981718 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+[node name="BaseCard" type="Panel" parent="MainHUD/BattleUI/HandZone/CardSlot8" unique_id=1479691705]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_4kpch")
+metadata/_custom_type_script = "uid://6gvsv81h82qa"
 
 [node name="LootUI" type="Control" parent="MainHUD" unique_id=1939464362]
 unique_name_in_owner = true
@@ -556,7 +589,7 @@ custom_minimum_size = Vector2(150, 225)
 layout_mode = 2
 text = "hyu7gyh"
 
-[node name="Option1Card" parent="MainHUD/LootUI/LootZone/Option1" unique_id=157553486 instance=ExtResource("5_v1gob")]
+[node name="Option1Card" parent="MainHUD/LootUI/LootZone/Option1" unique_id=2066724175 instance=ExtResource("5_v1gob")]
 unique_name_in_owner = true
 show_behind_parent = true
 layout_mode = 0

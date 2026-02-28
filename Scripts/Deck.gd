@@ -34,6 +34,9 @@ func draw(amount = "one"):
 			printerr("Invalid type passed to Deck.draw: '" + amount + "'")
 	return returned
 
+func add_card(cards_to_add: Array[Card]):
+	deck_list.append_array(cards_to_add)
+
 @abstract func view()
 
 class PlayerDeck extends Deck:
@@ -68,8 +71,12 @@ class PlayerDeck extends Deck:
 		
 class Discard extends Deck:
 	
-	func draw(amount = "one"):
-		print("different func")
+	func view():
+		for i in deck_list:
+			print("the cards name is: " + i.name)
+
+class PlayerHand extends Deck:
+	
 	func view():
 		for i in deck_list:
 			print("the cards name is: " + i.name)

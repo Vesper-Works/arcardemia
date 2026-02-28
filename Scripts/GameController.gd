@@ -9,6 +9,8 @@ extends Node
 @onready var main_hud: Control = %MainHUD
 @onready var player_deck: Deck = CardController.player_deck
 @onready var button1 = %Option1
+@onready var battle_ui: Control = %BattleUI
+
 
 var enemy: Creature
 var player: Creature = Player.new()
@@ -17,10 +19,12 @@ var loot_option: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	CameraAnimator.play("ZoomOnBox")
-	LootCutsceneStart()
-	enemy = Enemy.Cerberous.new()
-	
+	#CameraAnimator.play("ZoomOnBox")
+	#LootCutsceneStart()
+	#enemy = Enemy.Cerberous.new()
+	await get_tree().create_timer(1.0).timeout
+	CardController.new_player_hand()
+	main_hud.show_hand(CardController.player_hand.deck_list)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -70,22 +74,26 @@ func LootPhase():
 	
 func _on_end_turn():
 	main_hud.clear_hand()
-	CardController.new_player_hand()
 	
 	player.take_damage(enemy.strength)
+	%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 	if player.health <= 0:
 		play_death_animation()
 		
 	else:
 		if enemy.health <= 0:
 			LootCutsceneStart()
-		main_hud.show_hand(CardController.player_hand.deck_list)
+		else:
+			CardController.new_player_hand()
+			main_hud.show_hand(CardController.player_hand.deck_list)
 	
 func _on_card_play(played_card: Card):
 	played_card.play(enemy, player)
 	
 func play_death_animation():
 	print("dead, bleh.")
+	battle_ui.visible = false
+	Loot.visible = false
 
 func LootCutsceneEnd():
 	CameraAnimator.play_backwards("ZoomOnBox")	#PillarAnimator.play_backwards("Raise")

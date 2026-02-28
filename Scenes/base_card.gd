@@ -1,3 +1,5 @@
+class_name BaseCard
+
 extends Panel
 
 signal on_played(myself)
@@ -9,6 +11,10 @@ signal on_played(myself)
 
 var click_start_time : int = 0
 var initial_mouse_offset : Vector2
+func _ready() -> void:
+	print("hi")
+	pass
+
 func style_to_card(card : Card):
 	card_title.text = card.name
 	card_description.text = card.description
@@ -44,8 +50,8 @@ func _on_gui_input(event: InputEvent) -> void:
 			else:
 				print("failed to play")
 				#position = Vector2(0,0)
-				visible = false
-				call_deferred("set_visible", true) #recalculated position from container!
+				get_parent().visible = false
+				get_parent().call_deferred("set_visible", true) #recalculated position from container!
 				
 			click_start_time = 0
 			initial_mouse_offset = Vector2(0,0)
