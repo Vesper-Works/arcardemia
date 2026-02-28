@@ -4,13 +4,17 @@ extends Node
 @onready var state: String = "Cutscene"
 @onready var PillarAnimator: AnimationPlayer = %BoxAnimator
 @onready var CameraAnimator: AnimationPlayer = %PlayerAnimator
+@onready var DogAnimator: AnimationPlayer = %CerberusAnimator
 @onready var Loot: Control = %Loot
 @onready var CardController: Control = %CardController
 @onready var main_hud: Control = %MainHUD
 @onready var player_deck: Deck = CardController.player_deck
-@onready var button1 = %Option1
-
-var enemy: Creature
+@onready var Reward1 = null
+@onready var Reward2 = null
+@onready var Reward3 = null
+@onready var deckcard1 = null
+@onready var deckcard2 = null
+@onready var enemy: Creature
 var player: Creature = Player.new()
 
 var loot_option: int
@@ -19,7 +23,7 @@ var loot_option: int
 func _ready() -> void:
 	CameraAnimator.play("ZoomOnBox")
 	LootCutsceneStart()
-	enemy = Enemy.Cerberous.new()
+	#enemy = Enemy.Cerberous.new()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +60,7 @@ func LootPhase():
 	else:
 		Reward2 = Loot.generate_basic_card()
 	
-	
+
 	#if deckcard1 != null:
 	#	player_deck.add_card(deckcard1)
 	#if deckcard2 != null:
@@ -90,8 +94,10 @@ func play_death_animation():
 func LootCutsceneEnd():
 	CameraAnimator.play_backwards("ZoomOnBox")	#PillarAnimator.play_backwards("Raise")
 	PillarAnimator.play_backwards("Close")
-	%HandZone.visible = true
-	%EndTurn.visible = true
+	#SpawnEnemy
+	
+	state = "PlayerTurn"
+	
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
@@ -99,8 +105,32 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		LootPhase()
 	if anim_name == "Close":
 		PillarAnimator.play_backwards("Lower")
+		DogAnimator.play("spawn")
+		%Cerberus.visible = true
+		CameraAnimator.play("ZoomOut")
+		
+
+
 
 
 func _on_loot_selected(option: int) -> void:
 	print("option selected: ", option)
 	%LootUI.visible = false
+	
+	match option:
+		1: 
+			player_deck.deck_list.append(Reward1)
+			player_deck.deck_list.append(deckcard2)
+		2:
+			player_deck.deck_list.append(Reward2)
+			player_deck.deck_list.append(deckcard1)
+		3:
+			player_deck.deck_list.append(deckcard1)
+			player_deck.deck_list.append(deckcard2)
+			player_deck.deck_list.append(Reward3)
+			
+	LootCutsceneEnd()
+
+
+func _on_cerberus_animator_animation_finished(anim_name: StringName) -> void:
+	%BattleUI.visible = true

@@ -9,8 +9,8 @@ var hand_size : int
 
 signal hand_display
 @export_group("Card Slots")
-@onready var slot_1: Control = $"../CardSlots/Slot1"
-@onready var slot_2: Control = $"../CardSlots/Slot2"
+@onready var slot_1: Control = %Slot1
+@onready var slot_2: Control = %Slot2
 
 var slots: Array[CardSlot] 
 
