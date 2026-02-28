@@ -6,26 +6,17 @@ enum CardType
 	Defence
 }
 enum CardSuit
-{
-	Alpha,
-	Beta,
-	Gamma,
-	Delta,
-	Epsilon,
-	Zeta,
-	Eta,
-	Theta,
-	Iota,
-	Kappa,
-	Lambda,
-	Mu
+{   
+	none, a, b, g, d, e, f, h, i, j, k, l, m, n
 }
+
 
 var name: String
 var description : String
 var texture : Texture2D
 var type : CardType
-var card_suit : CardSuit
+var suit: CardSuit = CardSuit.none
+var augment: Augment.AugmentName = Augment.AugmentName.none
 
 @abstract func play(enemy, player)
 

@@ -1,7 +1,6 @@
 
 extends Node
 
-# holds all the "decks"
 var player_deck : Deck
 var discard_deck : Deck
 var player_hand: Deck
