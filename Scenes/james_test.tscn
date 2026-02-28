@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d2yiungmpaxgu" path="res://Scripts/CardControl.gd" id="1_a4vxn"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="2_8wjo8"]
+[ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="3_8wjo8"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_6vqpa"]
 
@@ -57,6 +58,80 @@ icon = SubResource("ImageTexture_6vqpa")
 
 [node name="CardController" type="Node" parent="MainHUD" unique_id=1223785607]
 script = ExtResource("2_8wjo8")
+
+[node name="EndTurn" type="Button" parent="MainHUD" unique_id=263103547]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.33
+anchor_bottom = 0.323
+offset_left = 1033.0
+offset_top = 481.0
+offset_right = 730.83997
+offset_bottom = 302.69598
+text = "End Turn"
+
+[node name="HandZone" type="HBoxContainer" parent="MainHUD" unique_id=1528510969]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -425.0
+offset_top = -128.0
+offset_right = 425.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CardSlot1" type="Button" parent="MainHUD/HandZone" unique_id=986162988]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot2" type="Button" parent="MainHUD/HandZone" unique_id=420749171]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot3" type="Button" parent="MainHUD/HandZone" unique_id=1186942616]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot4" type="Button" parent="MainHUD/HandZone" unique_id=374795679]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot5" type="Button" parent="MainHUD/HandZone" unique_id=955531345]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot6" type="Button" parent="MainHUD/HandZone" unique_id=792462912]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot7" type="Button" parent="MainHUD/HandZone" unique_id=1097476488]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
+
+[node name="CardSlot8" type="Button" parent="MainHUD/HandZone" unique_id=866427534]
+layout_mode = 2
+icon = ExtResource("3_8wjo8")
+icon_alignment = 1
+expand_icon = true
 
 [connection signal="pressed" from="MainHUD/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]
 [connection signal="pressed" from="MainHUD/EndTurn" to="MainHUD/CardController" method="_on_end_turn_pressed"]
