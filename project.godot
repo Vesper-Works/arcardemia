@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Arcardemia"
-run/main_scene="uid://fmgn00eem4wg"
+run/main_scene="uid://dhiyoey5yyn4x"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 

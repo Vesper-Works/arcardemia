@@ -6,8 +6,7 @@ extends Node
 @onready var CameraAnimator: AnimationPlayer = %PlayerAnimator
 @onready var Loot: Control = %Loot
 @onready var CardController: Control = %CardController
-@onready var player_deck: Deck = CardController.player_deck
-@onready var main_hud: Control = $MainHUD
+@onready var main_hud: Control = %MainHUD
 @onready var player_deck: Deck = CardController.player_deck
 
 var enemy: Creature
@@ -31,8 +30,8 @@ func LootCutsceneStart():
 
 	
 func LootPhase():
-	main_hud.visible = true
 	state = "Loot"
+	%LootUI.visible = true
 	#pick a card from the deck
 	
 	var deckcard1: Card = null
@@ -61,7 +60,7 @@ func LootPhase():
 	
 func _on_end_turn():
 	main_hud.clear_hand()
-	card_controller.new_player_hand()
+	CardController.new_player_hand()
 	
 	player.take_damage(enemy.strength)
 	if player.health <= 0:
@@ -70,7 +69,7 @@ func _on_end_turn():
 	else:
 		if enemy.health <= 0:
 			LootCutsceneStart()
-		main_hud.show_hand(card_controller.player_hand.deck_list)
+		main_hud.show_hand(CardController.player_hand.deck_list)
 	
 func _on_card_play(played_card: Card):
 	played_card.play(enemy, player)
