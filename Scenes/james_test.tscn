@@ -77,4 +77,5 @@ offset_right = 8.0
 offset_bottom = 8.0
 
 [connection signal="pressed" from="MainHUD/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]
+[connection signal="hand_display" from="MainHUD/CardController" to="MainHUD" method="_on_card_controller_hand_display"]
 [connection signal="pressed" from="MainHUD/EndTurn" to="MainHUD/CardController" method="_on_end_turn_pressed"]

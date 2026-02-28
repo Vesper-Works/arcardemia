@@ -20,3 +20,6 @@ func _on_draw_button_pressed() -> void:
 	else:
 		draw_window.visible = true
 	pass # Replace with function body.
+
+func _on_card_controller_hand_display(command: String, deck: Array[Card]) -> void:
+	pass # Replace with function body.
