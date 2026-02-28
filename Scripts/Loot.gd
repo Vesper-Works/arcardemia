@@ -8,6 +8,7 @@ func _ready() -> void:
 	
 	#should only be called once on startup
 	generate_augment_pool()
+	generate_relic_pool()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -1,7 +1,8 @@
 [gd_scene format=4 uid="uid://dhiyoey5yyn4x"]
 
 [ext_resource type="Script" uid="uid://dacjsiy0r1wol" path="res://Scripts/GameController.gd" id="1_idj7w"]
-[ext_resource type="Animation" uid="uid://buh1gipoopaxt" path="res://Open.anim" id="2_kln2b"]
+[ext_resource type="Script" uid="uid://rk4buw5nh1t" path="res://Scripts/Loot.gd" id="2_rgh2o"]
+[ext_resource type="Animation" uid="uid://5enoxvuypu66" path="res://Close.anim" id="3_pbw6q"]
 [ext_resource type="Animation" uid="uid://biyo84h0oysyw" path="res://Raise.anim" id="3_rgh2o"]
 
 [sub_resource type="Animation" id="Animation_kln2b"]
@@ -23,7 +24,7 @@ tracks/0/enabled = true
 tracks/0/path = NodePath("Player")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.033333335, 1, -0.099, 4, 10.099, 9.9, 1, -0.099, 4, 6.974)
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, -0.099, 7, 10.099, 9.9, 1, -0.099, 7, 6.974)
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_pbw6q"]
 _data = {
@@ -203,9 +204,54 @@ metadata/extras = {
 "targetNames": ["Key 1", "Key 2", "Key 3"]
 }
 
+[sub_resource type="Animation" id="Animation_v1gob"]
+resource_name = "Close"
+length = 2.875
+tracks/0/type = "blend_shape"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pillar/Pandora\'s Box:Key 1")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 1.2916666, 1, 1, 2.0416667, 1, 0, 2.875, 1, 0)
+tracks/1/type = "blend_shape"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Pillar/Pandora\'s Box:Key 2")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 1.2916666, 1, 0, 2.0416667, 1, 1, 2.0833333, 1, 0.98109376, 2.125, 1, 0.924375, 2.1666667, 1, 0.82984376, 2.2083333, 1, 0.6975, 2.25, 1, 0.52734375, 2.2916667, 1, 0.31937492, 2.3333333, 1, 0.073593795, 2.375, 1, 0.089999974, 2.4166667, 1, 0.1810937, 2.4583333, 1, 0.234375, 2.5, 1, 0.24984378, 2.5416667, 1, 0.22750002, 2.5833333, 1, 0.1673438, 2.625, 1, 0.06937504, 2.6666667, 1, 0.02734375, 2.7083333, 1, 0.060000002, 2.75, 1, 0.054843724, 2.7916667, 1, 0.011875033, 2.8333333, 1, 0.015468776, 2.875, 1, 0)
+tracks/2/type = "blend_shape"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pillar/Pandora\'s Box:Key 3")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 2.0416667, 1, 0, 2.0833333, 1, 0.01890625, 2.125, 1, 0.075625, 2.1666667, 1, 0.17015627, 2.2083333, 1, 0.3025, 2.25, 1, 0.47265625, 2.2916667, 1, 0.6806251, 2.3333333, 1, 0.9264062, 2.375, 1, 0.91, 2.4166667, 1, 0.8189063, 2.4583333, 1, 0.765625, 2.5, 1, 0.7501562, 2.5416667, 1, 0.7725, 2.5833333, 1, 0.8326562, 2.625, 1, 0.93062496, 2.6666667, 1, 0.97265625, 2.7083333, 1, 0.94, 2.75, 1, 0.9451563, 2.7916667, 1, 0.98812497, 2.8333333, 1, 0.9845312, 2.875, 1, 1)
+tracks/3/type = "position_3d"
+tracks/3/imported = true
+tracks/3/enabled = false
+tracks/3/path = NodePath("Pillar")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, -2.5, 0)
+
+[sub_resource type="Animation" id="Animation_jw32o"]
+resource_name = "Lower"
+length = 2.5
+tracks/0/type = "position_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Pillar")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, -2.5, 0, 0.033333335, 1, 0, -2.4976926, 0, 0.06666667, 1, 0, -2.4920018, 0, 0.1, 1, 0, -2.4830055, 0, 0.13333334, 1, 0, -2.4707816, 0, 0.16666667, 1, 0, -2.4554074, 0, 0.2, 1, 0, -2.435989, 0, 0.23333333, 1, 0, -2.4136536, 0, 0.26666668, 1, 0, -2.3884797, 0, 0.3, 1, 0, -2.3605444, 0, 0.33333334, 1, 0, -2.3299258, 0, 0.36666667, 1, 0, -2.295885, 0, 0.4, 1, 0, -2.2593944, 0, 0.43333334, 1, 0, -2.2205315, 0, 0.46666667, 1, 0, -2.179374, 0, 0.5, 1, 0, -2.136, 0, 0.53333336, 1, 0, -2.089826, 0, 0.56666666, 1, 0, -2.0416684, 0, 0.6, 1, 0, -1.9916054, 0, 0.6333333, 1, 0, -1.9397148, 0, 0.6666667, 1, 0, -1.886074, 0, 0.7, 1, 0, -1.8302555, 0, 0.73333335, 1, 0, -1.7729203, 0, 0.76666665, 1, 0, -1.7141464, 0, 0.8, 1, 0, -1.6540111, 0, 0.8333333, 1, 0, -1.5925925, 0, 0.8666667, 1, 0, -1.5296185, 0, 0.9, 1, 0, -1.4655945, 0, 0.93333334, 1, 0, -1.4005982, 0, 0.96666664, 1, 0, -1.3347075, 0, 1, 1, 0, -1.2679999, 0, 1.0666667, 1, 0, -1.132135, 0, 1.4, 1, 0, -0.4365945, 0, 1.4666667, 1, 0, -0.29964074, 0, 1.5, 1, 0, -0.23199987, 0, 1.5333333, 1, 0, -0.16529244, 0, 1.5666667, 1, 0, -0.09940169, 0, 1.6, 1, 0, -0.03440559, 0, 1.6333333, 1, 0, 0.029618455, 0, 1.6666666, 1, 0, 0.092592716, 0, 1.7, 1, 0, 0.1540113, 0, 1.7333333, 1, 0, 0.21414633, 0, 1.7666667, 1, 0, 0.2729203, 0, 1.8, 1, 0, 0.33025542, 0, 1.8333334, 1, 0, 0.38607383, 0, 1.8666667, 1, 0, 0.43971476, 0, 1.9, 1, 0, 0.49160546, 0, 1.9333333, 1, 0, 0.5416684, 0, 1.9666667, 1, 0, 0.5898261, 0, 2, 1, 0, 0.63600016, 0, 2.0333333, 1, 0, 0.6793741, 0, 2.0666666, 1, 0, 0.72053176, 0, 2.1, 1, 0, 0.7593949, 0, 2.1333334, 1, 0, 0.7958857, 0, 2.1666667, 1, 0, 0.829926, 0, 2.2, 1, 0, 0.8605444, 0, 2.2333333, 1, 0, 0.88847953, 0, 2.2666667, 1, 0, 0.9136536, 0, 2.3, 1, 0, 0.9359887, 0, 2.3333333, 1, 0, 0.95540714, 0, 2.3666666, 1, 0, 0.97078145, 0, 2.4, 1, 0, 0.98300534, 0, 2.4333334, 1, 0, 0.99200153, 0, 2.4666667, 1, 0, 0.9976925, 0, 2.5, 1, 0, 1, 0)
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ot4qm"]
 _data = {
-&"Open": ExtResource("2_kln2b"),
+&"Close": SubResource("Animation_v1gob"),
+&"Lower": SubResource("Animation_jw32o"),
+&"Open": ExtResource("3_pbw6q"),
 &"Raise": ExtResource("3_rgh2o")
 }
 
@@ -213,9 +259,11 @@ _data = {
 script = ExtResource("1_idj7w")
 
 [node name="Player" type="Camera3D" parent="." unique_id=659181970]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.9963079, 0.08585164, 0, -0.08585164, 0.9963079, -0.09883547, 3.3360343, 7.044793)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Player" unique_id=1109965793]
+[node name="PlayerAnimator" type="AnimationPlayer" parent="Player" unique_id=1109965793]
+unique_name_in_owner = true
 root_node = NodePath("../..")
 libraries/ = SubResource("AnimationLibrary_pbw6q")
 
@@ -224,6 +272,14 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_idj7w")
+
+[node name="Loot" type="Control" parent="GameController" unique_id=629726145]
+unique_name_in_owner = true
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_rgh2o")
 
 [node name="Scene" type="Node3D" parent="." unique_id=266420062]
 
@@ -262,5 +318,8 @@ shadow_blur = 10.0
 omni_range = 4096.0
 omni_attenuation = 2.0
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Scene" unique_id=2032698382]
+[node name="BoxAnimator" type="AnimationPlayer" parent="Scene" unique_id=2032698382]
+unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_ot4qm")
+
+[connection signal="animation_finished" from="Scene/BoxAnimator" to="GameController" method="_on_animation_player_animation_finished"]

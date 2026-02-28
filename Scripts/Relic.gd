@@ -1,4 +1,4 @@
-@abstract class_name Relic
+class_name Relic
 extends Node
 
 var Name: RelicList
