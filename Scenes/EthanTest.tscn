@@ -4,4 +4,20 @@
 
 [node name="EthanTest" type="Node3D" unique_id=1657266783]
 
-[node name="Scene" parent="." unique_id=810676294 instance=ExtResource("1_2t748")]
+[node name="Scene" parent="." unique_id=1305138398 instance=ExtResource("1_2t748")]
+
+[node name="Pandora\'s Box" parent="Scene/Pillar" parent_id_path=PackedInt32Array(1305138398, 456188323) index="1" unique_id=226320897]
+"blend_shapes/Key 3" = 1.0
+
+[node name="Point" parent="Scene/Pillar/Pandora\'s Box" index="0" unique_id=934249568]
+light_energy = 7.141
+light_size = 0.172
+light_specular = 16.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.03
+shadow_normal_bias = 10.0
+shadow_reverse_cull_face = true
+shadow_blur = 10.0
+
+[editable path="Scene"]
