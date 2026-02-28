@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 import/blender/enabled=false
 
+[gui]
+
+theme/custom="uid://b7mocs3ebkgvj"
+theme/custom_font="uid://br11leal6vnet"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"

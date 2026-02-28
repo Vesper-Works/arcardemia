@@ -1,0 +1,99 @@
+[gd_scene format=3 uid="uid://fmgn00eem4wg"]
+
+[ext_resource type="Texture2D" uid="uid://b02bqxg8taui5" path="res://Assets/Textures/BasicAttack.png" id="1_5jgn3"]
+[ext_resource type="Script" uid="uid://6gvsv81h82qa" path="res://Scenes/base_card.gd" id="1_ldaoi"]
+[ext_resource type="FontFile" uid="uid://dx17ruxiwj63l" path="res://Assets/Fonts/ancienthellenic-webfont.ttf" id="3_3i23m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dq276"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_oxmb4"]
+font = ExtResource("3_3i23m")
+font_size = 32
+
+[node name="Panel" type="Panel" unique_id=2066724175]
+custom_minimum_size = Vector2(150, 225)
+theme_type_variation = &"CardPanel"
+script = ExtResource("1_ldaoi")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1018928896]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=811266570]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="CardTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=883970294]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Title"
+label_settings = SubResource("LabelSettings_dq276")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1624368519]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1462544841]
+custom_minimum_size = Vector2(50, 65)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control" unique_id=2110265313]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 0
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="MarginContainer/VBoxContainer/Control/MarginContainer" unique_id=348802250]
+layout_mode = 2
+
+[node name="CardArt" type="TextureRect" parent="MarginContainer/VBoxContainer/Control/MarginContainer/AspectRatioContainer" unique_id=1715396370]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("1_5jgn3")
+expand_mode = 1
+
+[node name="CardSuit" type="Label" parent="MarginContainer/VBoxContainer/Control" unique_id=851818578]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -22.0
+offset_top = -22.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "α"
+label_settings = SubResource("LabelSettings_oxmb4")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=743469053]
+layout_mode = 2
+
+[node name="CardDescription" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2083570114]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "Deals 50 damage"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
