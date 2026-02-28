@@ -6,10 +6,28 @@ enum CardType
 	Defence
 }
 
+enum CardSuit
+{
+	Alpha,
+	Beta,
+	Gamma,
+	Delta,
+	Epsilon,
+	Zeta,
+	Eta,
+	Theta,
+	Iota,
+	Kappa,
+	Lambda,
+	Mu
+}
+
 var name: String
 var description : String
 var texture : Texture2D
 var type : CardType
+var card_suit : CardSuit
+
 @abstract func play(enemy, player)
 
 
