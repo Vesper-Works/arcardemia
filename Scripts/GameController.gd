@@ -28,6 +28,7 @@ func LootCutsceneStart():
 
 	
 func LootPhase():
+	main_hud.visible = true
 	var Option1: Augment = Loot.get_augment()
 	
 	var Option2: Card = Loot.get_basic_card()
@@ -55,7 +56,6 @@ func play_death_animation():
 func LootCutsceneEnd():
 	CameraAnimator.play_backwards("ZoomOnBox")	#PillarAnimator.play_backwards("Raise")
 	PillarAnimator.play_backwards("Close")
-	main_hud.visible = true
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
