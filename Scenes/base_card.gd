@@ -33,20 +33,24 @@ func style_to_card(card : Card):
 
 
 func _on_gui_input(event: InputEvent) -> void:
-	
+
 	if event is InputEventMouse and click_start_time > 0:
 		#if initial_mouse_offset == Vector2(0,0):
 			#initial_mouse_offset = event.position
-		position = event.global_position - initial_mouse_offset
+		global_position = event.global_position - initial_mouse_offset
 	if event is InputEventMouseButton and event.button_index == MouseButton.MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			click_start_time = Time.get_ticks_msec()
 			initial_mouse_offset = get_local_mouse_position()
 			print("pressed")
 		if event.is_released():
-			if Time.get_ticks_msec() - click_start_time <= 500 or position.y < -size.y * 0.8:
+			if Time.get_ticks_msec() - click_start_time <= 100 or position.y < -size.y * 0.8:
 				on_played.emit()
 				print("played!")
+			else:
+				#position = Vector2(0,0)
+				visible = false
+				call_deferred("set_visible", true) #recalculated position from container!
 				
 			click_start_time = 0
 			initial_mouse_offset = Vector2(0,0)
