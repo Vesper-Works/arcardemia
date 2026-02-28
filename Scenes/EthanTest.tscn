@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://43jtshf65k41" path="res://Assets/Models/Scene.glb" id="1_2t748"]
 [ext_resource type="PackedScene" uid="uid://fmgn00eem4wg" path="res://Scenes/base_card.tscn" id="2_16i8d"]
+[ext_resource type="PackedScene" uid="uid://bldvcpm88gcg6" path="res://Assets/Models/Cerberus.glb" id="3_dq276"]
 
 [node name="EthanTest" type="Node3D" unique_id=1657266783]
 
@@ -42,10 +43,32 @@ offset_right = 20.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Panel" parent="Control/HBoxContainer" unique_id=2066724175 instance=ExtResource("2_16i8d")]
+[node name="CenterContainer" type="CenterContainer" parent="Control/HBoxContainer" unique_id=675243940]
 layout_mode = 2
 
-[node name="Panel2" parent="Control/HBoxContainer" unique_id=997804767 instance=ExtResource("2_16i8d")]
+[node name="Button" type="Button" parent="Control/HBoxContainer/CenterContainer" unique_id=1079074770]
 layout_mode = 2
+
+[node name="Panel" parent="Control/HBoxContainer/CenterContainer" unique_id=2066724175 instance=ExtResource("2_16i8d")]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 2
+
+[node name="CenterContainer2" type="CenterContainer" parent="Control/HBoxContainer" unique_id=190880999]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/HBoxContainer/CenterContainer2" unique_id=1695310449]
+layout_mode = 2
+
+[node name="Panel" parent="Control/HBoxContainer/CenterContainer2" unique_id=786579635 instance=ExtResource("2_16i8d")]
+modulate = Color(1, 1, 1, 0.19607843)
+layout_mode = 2
+
+[node name="CenterContainer3" type="CenterContainer" parent="Control/HBoxContainer" unique_id=233218866]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Control/HBoxContainer/CenterContainer3" unique_id=1936075700]
+layout_mode = 2
+
+[node name="Cerberus" parent="." unique_id=1293626684 instance=ExtResource("3_dq276")]
 
 [editable path="Scene"]
