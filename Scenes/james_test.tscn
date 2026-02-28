@@ -1,20 +1,7 @@
 [gd_scene format=3 uid="uid://csdwhdgah2wkm"]
 
+[ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Scripts/Main_HUD.gd" id="1_a4vxn"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="2_8wjo8"]
-
-[sub_resource type="GDScript" id="GDScript_yldww"]
-script/source = "extends \"res://Scripts/Main_HUD.gd\"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
 
 [sub_resource type="ImageTexture" id="ImageTexture_6vqpa"]
 
@@ -27,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = SubResource("GDScript_yldww")
+script = ExtResource("1_a4vxn")
 
 [node name="DrawWindow" type="Control" parent="MainHUD" unique_id=1309547904]
 visible = false
