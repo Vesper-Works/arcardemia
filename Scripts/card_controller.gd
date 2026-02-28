@@ -31,16 +31,21 @@ func _process(delta: float) -> void:
 	
 
 
-func _on_end_turn_pressed() -> void:
-	hand_display.emit("clear", player_hand)
+func _on_new_player_hand() -> void:
 	for i in player_hand.deck_list.size():
 		discard_deck.add_card(player_hand.Draw(player_hand.deck_list.size()))
 	if player_deck.deck_list.size() >= hand_size:
 		player_hand.add_card(player_deck.draw(hand_size))
 	else:
 		var remaining = hand_size - player_deck.deck_list.size()
-		player_hand.draw(player_deck.decklist.size())
-	hand_display.emit("show", player_hand)
+		player_hand.add_card(player_deck.draw(player_deck.decklist.size()))
+		if not discard_deck.deck_list.is_empty():
+			player_deck.add_cards(discard_deck.draw("all"))
+			if player_deck.deck_list.size() <= remaining:
+				player_hand.add_card(player_deck.draw(remaining))
+			else:
+				player_hand.add_card(player_deck.draw(player_deck.deck_list.size()))
+
 func DrawCards():
 	
 	var empty_slots: Array[CardSlot] = []

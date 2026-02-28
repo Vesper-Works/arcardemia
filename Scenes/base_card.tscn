@@ -11,8 +11,19 @@ font_size = 24
 font = ExtResource("3_3i23m")
 font_size = 32
 
-[node name="Panel" type="Panel" unique_id=2066724175]
+[node name="Card" type="Panel" unique_id=2066724175]
 custom_minimum_size = Vector2(150, 225)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -112.5
+offset_right = 75.0
+offset_bottom = 112.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_type_variation = &"CardPanel"
 script = ExtResource("1_ldaoi")
 
@@ -35,6 +46,7 @@ theme_override_constants/separation = 0
 [node name="CardTitle" type="Label" parent="MarginContainer/VBoxContainer" unique_id=883970294]
 unique_name_in_owner = true
 layout_mode = 2
+mouse_filter = 1
 text = "Title"
 label_settings = SubResource("LabelSettings_dq276")
 horizontal_alignment = 1
@@ -43,10 +55,12 @@ autowrap_mode = 2
 
 [node name="HSeparator" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=1624368519]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer" unique_id=1462544841]
 custom_minimum_size = Vector2(50, 65)
 layout_mode = 2
+mouse_filter = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/Control" unique_id=2110265313]
 layout_mode = 1
@@ -81,6 +95,7 @@ offset_left = -22.0
 offset_top = -22.0
 grow_horizontal = 0
 grow_vertical = 0
+mouse_filter = 1
 text = "α"
 label_settings = SubResource("LabelSettings_oxmb4")
 horizontal_alignment = 1
@@ -88,12 +103,16 @@ vertical_alignment = 1
 
 [node name="HSeparator2" type="HSeparator" parent="MarginContainer/VBoxContainer" unique_id=743469053]
 layout_mode = 2
+mouse_filter = 1
 
 [node name="CardDescription" type="Label" parent="MarginContainer/VBoxContainer" unique_id=2083570114]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 1
 text = "Deals 50 damage"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

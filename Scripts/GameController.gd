@@ -7,6 +7,11 @@ extends Node
 @onready var Loot: Control = %Loot
 @onready var CardController: Control = %CardController
 @onready var player_deck: Deck = CardController.player_deck
+@onready var card_controller: Node = $MainHUD/CardController
+
+var enemy: Creature
+var player: Creature = Player.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	CameraAnimator.play("ZoomOnBox")
@@ -52,7 +57,9 @@ func LootPhase():
 
 	
 	
-
+func main_loop():
+	enemy = Enemy.Cerberous.new()
+	card_controller.
 
 		
 func LootCutsceneEnd():
