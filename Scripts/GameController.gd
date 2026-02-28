@@ -22,6 +22,7 @@ func LootCutsceneStart():
 	
 func LootPhase():
 	var Option1: Augment = Loot.get_augment()
+	
 	var Option2: Card = Loot.get_basic_card()
 	var Option3: Relic = Loot.get_relic()
 	
