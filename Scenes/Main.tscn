@@ -6,7 +6,6 @@
 [ext_resource type="Animation" uid="uid://bwbocibumul70" path="res://Raise.anim" id="3_rgh2o"]
 [ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Scripts/Main_HUD.gd" id="4_50glp"]
 [ext_resource type="PackedScene" uid="uid://fmgn00eem4wg" path="res://Scenes/base_card.tscn" id="5_v1gob"]
-[ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="5_vy5pj"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="7_bmxlf"]
 [ext_resource type="Script" uid="uid://dqfwxissm2g5v" path="res://Scenes/button.gd" id="8_vy5pj"]
 
@@ -445,19 +444,26 @@ alignment = 1
 [node name="CardSlot1" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=1709905566]
 custom_minimum_size = Vector2(75, 225)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
 [node name="Card" parent="MainHUD/BattleUI/HandZone/CardSlot1" unique_id=2066724175 instance=ExtResource("5_v1gob")]
-layout_mode = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 632.0
+offset_top = 0.0
+offset_right = 782.0
+offset_bottom = 225.0
 grow_horizontal = 1
 grow_vertical = 1
 
 [node name="CardSlot2" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=553898199]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
@@ -467,7 +473,6 @@ layout_mode = 1
 [node name="CardSlot3" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=2125232298]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
@@ -477,7 +482,6 @@ layout_mode = 1
 [node name="CardSlot4" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=963858968]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
@@ -487,7 +491,6 @@ layout_mode = 1
 [node name="CardSlot5" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=538815556]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
@@ -497,7 +500,6 @@ layout_mode = 1
 [node name="CardSlot6" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=1719693772]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
@@ -507,7 +509,6 @@ layout_mode = 1
 [node name="CardSlot7" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=1186293940]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 
@@ -517,7 +518,6 @@ layout_mode = 1
 [node name="CardSlot8" type="Button" parent="MainHUD/BattleUI/HandZone" unique_id=986895773]
 custom_minimum_size = Vector2(75, 0)
 layout_mode = 2
-icon = ExtResource("5_vy5pj")
 icon_alignment = 1
 expand_icon = true
 

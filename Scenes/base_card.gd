@@ -49,8 +49,8 @@ func _on_gui_input(event: InputEvent) -> void:
 				print("played!")
 			else:
 				#position = Vector2(0,0)
-				visible = false
-				call_deferred("set_visible", true) #recalculated position from container!
+				get_parent().visible = false
+				get_parent().call_deferred("set_visible", true) #recalculated position from container!
 				
 			click_start_time = 0
 			initial_mouse_offset = Vector2(0,0)
