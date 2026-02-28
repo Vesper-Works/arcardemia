@@ -8,7 +8,7 @@ extends Node
 @onready var CardController: Control = %CardController
 @onready var player_deck: Deck = CardController.player_deck
 @onready var main_hud: Control = $MainHUD
-@onready var card_controller: Node = $MainHUD/CardController
+@onready var player_deck: Deck = CardController.player_deck
 
 var enemy: Creature
 var player: Creature = Player.new()
@@ -31,6 +31,7 @@ func LootCutsceneStart():
 
 	
 func LootPhase():
+	main_hud.visible = true
 	state = "Loot"
 	#pick a card from the deck
 	
@@ -80,7 +81,8 @@ func play_death_animation():
 func LootCutsceneEnd():
 	CameraAnimator.play_backwards("ZoomOnBox")	#PillarAnimator.play_backwards("Raise")
 	PillarAnimator.play_backwards("Close")
-	main_hud.visible = true
+	%HandZone.visible = true
+	%EndTurn.visible = true
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

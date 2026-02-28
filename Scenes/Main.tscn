@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dacjsiy0r1wol" path="res://Scripts/GameController.gd" id="1_idj7w"]
 [ext_resource type="Script" uid="uid://rk4buw5nh1t" path="res://Scripts/Loot.gd" id="2_rgh2o"]
 [ext_resource type="Animation" uid="uid://5enoxvuypu66" path="res://Close.anim" id="3_pbw6q"]
-[ext_resource type="Animation" uid="uid://biyo84h0oysyw" path="res://Raise.anim" id="3_rgh2o"]
+[ext_resource type="Animation" uid="uid://bwbocibumul70" path="res://Raise.anim" id="3_rgh2o"]
 [ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Scripts/Main_HUD.gd" id="4_50glp"]
 [ext_resource type="PackedScene" uid="uid://fmgn00eem4wg" path="res://Scenes/base_card.tscn" id="5_v1gob"]
 [ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="5_vy5pj"]
@@ -317,6 +317,8 @@ unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_ot4qm")
 
 [node name="MainHUD" type="Control" parent="." unique_id=1655629688]
+unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
