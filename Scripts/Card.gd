@@ -7,7 +7,7 @@ enum CardType
 }
 enum CardSuit
 {   
-	none, a, b, g, d, e, f, h, i, j, k, l, m, n
+	none, a, b, g
 }
 
 

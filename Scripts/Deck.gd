@@ -39,7 +39,7 @@ func draw(amount = "one"):
 class PlayerDeck extends Deck:
 	
 	func _init():
-		for i in 5:
+		for i in 6:
 			if i >= 3:
 				deck_list.append(Card.BasicAttack.new())
 			else:

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dtdyi8y1exjbj"]
 
-[ext_resource type="Script" uid="uid://d2yiungmpaxgu" path="res://Scripts/CardControl.gd" id="1_a4vxn"]
+[ext_resource type="Script" uid="uid://d4nt73p8t8yvv" path="res://Scripts/Main_HUD.gd" id="1_8wjo8"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="2_8wjo8"]
 [ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="3_8wjo8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8wjo8"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_6vqpa"]
 
@@ -15,29 +17,50 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_a4vxn")
+script = ExtResource("1_8wjo8")
 
 [node name="DrawWindow" type="Control" parent="MainHUD" unique_id=1309547904]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+visibility_layer = 3
+z_as_relative = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="ColorRect" parent="MainHUD/DrawWindow" unique_id=399884138]
+modulate = Color(1, 1, 0.050980393, 1)
+self_modulate = Color(0.7585313, 0.756418, 7.70092e-07, 1)
+material = SubResource("CanvasItemMaterial_8wjo8")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+color = Color(0.16792431, 0.16710523, 7.219613e-08, 1)
 
 [node name="DiscardWindow" type="Control" parent="MainHUD" unique_id=425536129]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="DrawButton" type="Button" parent="MainHUD" unique_id=283801972]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 60.0
-offset_top = -92.0
-offset_right = 99.0
-offset_bottom = -36.0
+offset_left = 12.0
+offset_top = -90.0
+offset_right = 51.0
+offset_bottom = -34.0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
 
@@ -48,10 +71,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -91.0
-offset_top = -93.0
-offset_right = -52.0
-offset_bottom = -37.0
+offset_left = -51.0
+offset_top = -92.0
+offset_right = -12.0
+offset_bottom = -36.0
 grow_horizontal = 0
 grow_vertical = 0
 icon = SubResource("ImageTexture_6vqpa")
@@ -64,10 +87,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.33
 anchor_bottom = 0.323
-offset_left = 1033.0
-offset_top = 481.0
-offset_right = 730.83997
-offset_bottom = 302.69598
+offset_left = 1015.0
+offset_top = 479.0
+offset_right = 712.83997
+offset_bottom = 300.69598
 text = "End Turn"
 
 [node name="HandZone" type="HBoxContainer" parent="MainHUD" unique_id=1528510969]
