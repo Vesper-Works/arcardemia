@@ -7,10 +7,10 @@
 
 [node name="Scene" parent="." unique_id=1305138398 instance=ExtResource("1_2t748")]
 
-[node name="Pandora\'s Box" parent="Scene/Pillar" parent_id_path=PackedInt32Array(1305138398, 456188323) index="1" unique_id=226320897]
+[node name="Pandora\'s Box" parent="Scene/Pillar" parent_id_path=PackedInt32Array(1305138398, 1192649282) index="1" unique_id=1235338360]
 "blend_shapes/Key 3" = 1.0
 
-[node name="Point" parent="Scene/Pillar/Pandora\'s Box" index="0" unique_id=934249568]
+[node name="Point" parent="Scene/Pillar/Pandora\'s Box" index="0" unique_id=1825681055]
 light_energy = 7.141
 light_size = 0.172
 light_specular = 16.0
@@ -43,7 +43,9 @@ grow_horizontal = 2
 grow_vertical = 0
 
 [node name="Panel" parent="Control/HBoxContainer" unique_id=2066724175 instance=ExtResource("2_16i8d")]
-custom_minimum_size = Vector2(150, 225)
+layout_mode = 2
+
+[node name="Panel2" parent="Control/HBoxContainer" unique_id=997804767 instance=ExtResource("2_16i8d")]
 layout_mode = 2
 
 [editable path="Scene"]
