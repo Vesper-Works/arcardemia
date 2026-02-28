@@ -1,3 +1,5 @@
+class_name BaseCard
+
 extends Panel
 
 signal on_played
@@ -9,6 +11,10 @@ signal on_played
 
 var click_start_time : int = 0
 var initial_mouse_offset : Vector2
+func _ready() -> void:
+	print("hi")
+	pass
+
 func style_to_card(card : Card):
 	card_title.text = card.name
 	card_description.text = card.description

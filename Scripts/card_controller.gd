@@ -21,6 +21,8 @@ var slots: Array[CardSlot]
 func _ready() -> void:
 	player_deck = Deck.PlayerDeck.new()
 	hand_size = 5
+	player_hand = Deck.PlayerHand.new()
+	discard_deck = Deck.Discard.new()
 
 	#$"../DrawButton".icon = player_deck.view()
 	slots = [$"../CardSlots/Slot1", $"../CardSlots/Slot2"]
@@ -33,14 +35,14 @@ func _process(delta: float) -> void:
 
 func new_player_hand() -> void:
 	for i in player_hand.deck_list.size():
-		discard_deck.add_card(player_hand.Draw(player_hand.deck_list.size()))
+		discard_deck.add_card(player_hand.draw(player_hand.deck_list.size()))
 	if player_deck.deck_list.size() >= hand_size:
 		player_hand.add_card(player_deck.draw(hand_size))
 	else:
 		var remaining = hand_size - player_deck.deck_list.size()
-		player_hand.add_card(player_deck.draw(player_deck.decklist.size()))
+		player_hand.add_card(player_deck.draw(player_deck.deck_list.size()))
 		if not discard_deck.deck_list.is_empty():
-			player_deck.add_cards(discard_deck.draw("all"))
+			player_deck.add_card(discard_deck.draw("all"))
 			if player_deck.deck_list.size() <= remaining:
 				player_hand.add_card(player_deck.draw(remaining))
 			else:
