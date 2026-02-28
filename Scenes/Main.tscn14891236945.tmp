@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dhiyoey5yyn4x"]
+
+[ext_resource type="PackedScene" uid="uid://43jtshf65k41" path="res://Assets/Models/Scene.glb" id="1_r150o"]
+
+[sub_resource type="Animation" id="Animation_kln2b"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, -0.09883547, 3.3360343, 7.044793)
+
+[sub_resource type="Animation" id="Animation_rgh2o"]
+resource_name = "ZoomOnBox"
+length = 10.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.033333335, 1, -0.09883547, 2.5535722, 10.098682, 9.9, 1, -0.09883547, 2.5535722, 6.974027)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pbw6q"]
+_data = {
+&"RESET": SubResource("Animation_kln2b"),
+&"ZoomOnBox": SubResource("Animation_rgh2o")
+}
+
+[node name="Main" type="Node3D" unique_id=2080635114]
+
+[node name="Scene" parent="." unique_id=1316568844 instance=ExtResource("1_r150o")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=659181970]
+transform = Transform3D(1, 0, 0, 0, 0.9963079, 0.08585164, 0, -0.08585164, 0.9963079, -0.09883547, 3.3360343, 7.044793)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera3D" unique_id=1109965793]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_pbw6q")
