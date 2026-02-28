@@ -47,7 +47,25 @@ class PlayerDeck extends Deck:
 		deck_list.shuffle()
 	func view():
 		return deck_list[0].texture
-
+		
+	func has_basic() -> bool:
+		for i in deck_list:
+			if i.suit == Card.CardSuit.none:
+				return true
+				
+		return false
+		
+	func get_basic() -> Card:
+		var select: Card = null
+		for i in deck_list:
+			if i.suit == Card.CardSuit.none:
+				var pos = deck_list.find(i)
+				select = i
+				deck_list.pop_at(pos)
+				break
+		
+		return select
+		
 class Discard extends Deck:
 	
 	func draw(amount = "one"):

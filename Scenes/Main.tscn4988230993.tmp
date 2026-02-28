@@ -8,8 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://fmgn00eem4wg" path="res://Scenes/base_card.tscn" id="5_v1gob"]
 [ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="5_vy5pj"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="7_bmxlf"]
-[ext_resource type="Animation" uid="uid://bwbocibumul70" path="res://Raise.anim" id="3_rgh2o"]
-[ext_resource type="PackedScene" uid="uid://b0dxv018wt52e" path="res://Scenes/main_hud.tscn" id="5_pbw6q"]
 
 [sub_resource type="Animation" id="Animation_kln2b"]
 length = 0.001

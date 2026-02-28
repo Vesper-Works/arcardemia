@@ -16,7 +16,7 @@ var description : String
 var texture : Texture2D
 var type : CardType
 var suit: CardSuit = CardSuit.none
-var augment: Augment.AugmentList = Augment.AugmentList.none
+var augment: Augment = null
 
 @abstract func play(enemy, player)
 
