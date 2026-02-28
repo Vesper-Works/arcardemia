@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtdyi8y1exjbj"]
 
-[ext_resource type="Script" path="res://Scripts/CardControl.gd" id="1_a4vxn"]
+[ext_resource type="Script" uid="uid://d2yiungmpaxgu" path="res://Scripts/CardControl.gd" id="1_a4vxn"]
 [ext_resource type="Script" uid="uid://dcbcyft0nbel8" path="res://Scripts/card_controller.gd" id="2_8wjo8"]
 [ext_resource type="Texture2D" uid="uid://d1ecyrmtogs7c" path="res://Assets/Textures/BasicDefend.png" id="3_8wjo8"]
 

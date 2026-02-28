@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://u22hdp8ivrw7"]
 
 [ext_resource type="PackedScene" uid="uid://43jtshf65k41" path="res://Assets/Models/Scene.glb" id="1_2t748"]
+[ext_resource type="PackedScene" uid="uid://fmgn00eem4wg" path="res://Scenes/base_card.tscn" id="2_16i8d"]
 
 [node name="EthanTest" type="Node3D" unique_id=1657266783]
 
@@ -19,5 +20,30 @@ shadow_bias = 0.03
 shadow_normal_bias = 10.0
 shadow_reverse_cull_face = true
 shadow_blur = 10.0
+
+[node name="Control" type="Control" parent="." unique_id=1117086792]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control" unique_id=957186404]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" parent="Control/HBoxContainer" unique_id=2066724175 instance=ExtResource("2_16i8d")]
+custom_minimum_size = Vector2(150, 225)
+layout_mode = 2
 
 [editable path="Scene"]
