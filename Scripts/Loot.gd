@@ -25,7 +25,7 @@ func _process(delta: float) -> void:
 	#var option3: Relic = get_relic()
 	
 
-func get_augment(card: Card):
+func generate_augment(card: Card):
 	var random = RandomNumberGenerator.new()
 	var augmentpointer = random.randi_range(1, augment_pool.size() - 1)
 	var letterpointer = random.randi_range(1, letter_pool.size() - 1)
@@ -48,7 +48,7 @@ func get_augment(card: Card):
 func get_relic():
 	return relic_pool.pick_random()
 	
-func get_basic_card():
+func generate_basic_card():
 	
 	var random = RandomNumberGenerator.new()
 	var select = random.randi_range(1,2)

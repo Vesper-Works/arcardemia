@@ -8,9 +8,12 @@ extends Node
 @onready var CardController: Control = %CardController
 @onready var main_hud: Control = %MainHUD
 @onready var player_deck: Deck = CardController.player_deck
+@onready var button1 = %Option1
 
 var enemy: Creature
 var player: Creature = Player.new()
+
+var loot_option: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -37,20 +40,27 @@ func LootPhase():
 	var deckcard1: Card = null
 	var deckcard2: Card = null
 	
-	if !player_deck.has_basic():
-		deckcard1 = Loot.get_basic_card()
-	else:
+	var Reward1: Card = null
+	var Reward2: Card = null
+	var Reward3: Card = Loot.generate_basic_card()
+	
+	if player_deck.has_basic():
 		deckcard1 = player_deck.get_basic()
-
-	if !player_deck.has_basic():
-		deckcard2 = Loot.get_basic_card()
+		Reward1 = Loot.generate_augment(deckcard1)
 	else:
-		deckcard2= player_deck.get_basic()
+		Reward1 = Loot.generate_basic_card()
 		
-	#set rewards
-	var Reward1: Card = Loot.get_augment(deckcard1)
-	var Reward2: Card = Loot.get_augment(deckcard2)
-	var Reward3: Card = Loot.get_basic_card()
+	if player_deck.has_basic():
+		deckcard2 = player_deck.get_basic()
+		Reward2 = Loot.generate_augment(deckcard2)
+	else:
+		Reward2 = Loot.generate_basic_card()
+	
+	
+	#if deckcard1 != null:
+	#	player_deck.add_card(deckcard1)
+	#if deckcard2 != null:
+	#	player_deck.add_card(deckcard2)
 	
 	%Option1Card.style_to_card(Reward1)
 	%Option2Card.style_to_card(Reward2)
@@ -89,3 +99,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		LootPhase()
 	if anim_name == "Close":
 		PillarAnimator.play_backwards("Lower")
+
+
+func _on_loot_selected(option: int) -> void:
+	print("option selected: ", option)
+	%LootUI.visible = false

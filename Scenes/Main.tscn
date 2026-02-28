@@ -493,7 +493,6 @@ expand_icon = true
 
 [node name="LootUI" type="Control" parent="MainHUD" unique_id=1939464362]
 unique_name_in_owner = true
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -521,9 +520,11 @@ grow_vertical = 2
 unique_name_in_owner = true
 custom_minimum_size = Vector2(150, 225)
 layout_mode = 2
+text = "hyu7gyh"
 
 [node name="Option1Card" parent="MainHUD/LootUI/LootZone/Option1" unique_id=2066724175 instance=ExtResource("5_v1gob")]
 unique_name_in_owner = true
+show_behind_parent = true
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -536,6 +537,7 @@ offset_right = 150.0
 offset_bottom = 225.0
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 1
 
 [node name="Option2" type="Button" parent="MainHUD/LootUI/LootZone" unique_id=1886521621]
 unique_name_in_owner = true
@@ -544,6 +546,7 @@ layout_mode = 2
 
 [node name="Option2Card" parent="MainHUD/LootUI/LootZone/Option2" unique_id=660813552 instance=ExtResource("5_v1gob")]
 unique_name_in_owner = true
+show_behind_parent = true
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -556,6 +559,7 @@ offset_right = 150.0
 offset_bottom = 225.0
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 1
 
 [node name="Option3" type="Button" parent="MainHUD/LootUI/LootZone" unique_id=1696079155]
 unique_name_in_owner = true
@@ -564,6 +568,7 @@ layout_mode = 2
 
 [node name="Option3Card" parent="MainHUD/LootUI/LootZone/Option3" unique_id=1179675461 instance=ExtResource("5_v1gob")]
 unique_name_in_owner = true
+show_behind_parent = true
 layout_mode = 0
 anchors_preset = 0
 anchor_left = 0.0
@@ -576,8 +581,10 @@ offset_right = 150.0
 offset_bottom = 225.0
 grow_horizontal = 1
 grow_vertical = 1
+mouse_filter = 1
 
 [node name="GameController" type="Control" parent="." unique_id=1436550499]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -586,10 +593,12 @@ script = ExtResource("1_idj7w")
 
 [node name="Loot" type="Control" parent="GameController" unique_id=629726145]
 unique_name_in_owner = true
+layout_mode = 1
 anchors_preset = 0
-offset_right = 1154.0
-offset_bottom = 648.0
 script = ExtResource("2_rgh2o")
 
 [connection signal="animation_finished" from="Scene/BoxAnimator" to="GameController" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="MainHUD/BattleUI/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]
+[connection signal="pressed" from="MainHUD/LootUI/LootZone/Option1" to="." method="_on_loot_selected" binds= [1]]
+[connection signal="pressed" from="MainHUD/LootUI/LootZone/Option2" to="GameController" method="_on_loot_selected" binds= [2]]
+[connection signal="pressed" from="MainHUD/LootUI/LootZone/Option3" to="GameController" method="_on_loot_selected" binds= [3]]

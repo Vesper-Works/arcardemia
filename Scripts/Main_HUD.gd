@@ -4,7 +4,7 @@ extends Control
 @onready var controller: Node = $CardController
 @onready var draw_window: Control = $DrawWindow
 @onready var discard_window: Control = $DiscardWindow
-@onready var card_slots: Array[Button] = [$HandZone/CardSlot1, $HandZone/CardSlot2, $HandZone/CardSlot3, $HandZone/CardSlot4, $HandZone/CardSlot5, $HandZone/CardSlot6, $HandZone/CardSlot7, $HandZone/CardSlot8]
+@onready var card_slots: Array[Button] = [$BattleUI/HandZone/CardSlot1, $BattleUI/HandZone/CardSlot2, $BattleUI/HandZone/CardSlot3, $BattleUI/HandZone/CardSlot4, $BattleUI/HandZone/CardSlot5, $BattleUI/HandZone/CardSlot6, $BattleUI/HandZone/CardSlot7, $BattleUI/HandZone/CardSlot8]
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
