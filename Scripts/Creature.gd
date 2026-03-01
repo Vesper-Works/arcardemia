@@ -14,8 +14,8 @@ func take_damage(amount):
 			amount -= shield
 			shield = 0
 		else:
-			amount = 0
 			shield -= amount
+			amount = 0
 	# then deals damage to the health
 	if amount >= health:
 		health = 0
