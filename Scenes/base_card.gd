@@ -8,6 +8,10 @@ signal on_played(myself)
 @onready var card_art: TextureRect = %CardArt
 @onready var card_description: Label = %CardDescription
 @onready var card_suit: Label = %CardSuit
+
+const SOUND_GRAB_CARD = preload("uid://ssrut70qprqx")
+const SOUND_PLAY_CARD = preload("uid://cu8lalsyuc5b")
+
 var underlying_card : Card
 var click_start_time : int = 0
 var initial_mouse_offset : Vector2
@@ -49,12 +53,15 @@ func _on_gui_input(event: InputEvent) -> void:
 		if event.is_pressed():
 			click_start_time = Time.get_ticks_msec()
 			initial_mouse_offset = get_local_mouse_position()
+			AudioPlayer.play_randomised(SOUND_GRAB_CARD)
 			#print("pressed")
 		if event.is_released():
-			if Time.get_ticks_msec() - click_start_time <= 100 or position.y < -size.y * 0.8:
+			if Time.get_ticks_msec() - click_start_time <= 100 or position.y < -size.y * 0.5:
 				on_played.emit(self)
+				AudioPlayer.play_randomised(SOUND_PLAY_CARD)
 				print("played!")
 			else:
+				AudioPlayer.play_randomised(SOUND_GRAB_CARD)
 				print("failed to play")
 				#position = Vector2(0,0)
 				get_parent().visible = false

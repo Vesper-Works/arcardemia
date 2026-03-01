@@ -9,6 +9,10 @@ extends Node
 @onready var CardController: Control = %CardController
 @onready var main_hud: Control = %MainHUD
 @onready var player_deck: Deck = CardController.player_deck
+const SOUND_PILLAR_RAISE = preload("uid://cfg5mk6drs0si")
+const SOUND_OPEN_BOX = preload("uid://o782dlph0i88")
+const SOUND_END_OF_OPEN = preload("uid://cvlppc5osj2y1")
+
 var Reward1: Card
 var Reward2: Card
 var Reward3: Card
@@ -36,7 +40,8 @@ func LootCutsceneStart():
 
 	PillarAnimator.play("Raise")
 	PillarAnimator.queue("Open")
-
+	await get_tree().process_frame
+	AudioPlayer.play_queue([SOUND_PILLAR_RAISE, SOUND_OPEN_BOX, SOUND_END_OF_OPEN])
 	
 func LootPhase():
 	state = "Loot"
@@ -95,8 +100,6 @@ func LootPhase():
 func _on_end_turn():
 	main_hud.clear_hand()
 	
-	player.take_damage(enemy.strength)
-	%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 	if player.health <= 0:
 		play_death_animation()
 		
@@ -104,6 +107,8 @@ func _on_end_turn():
 		if enemy.health <= 0:
 			LootCutsceneStart()
 		else:
+			player.take_damage(enemy.strength)
+			%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 			CardController.new_player_hand()
 			main_hud.show_hand(CardController.player_hand.deck_list)
 	
@@ -130,6 +135,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		LootPhase()
 	if anim_name == "Close":
 		PillarAnimator.play_backwards("Lower")
+		AudioPlayer.play(SOUND_PILLAR_RAISE)
 		DogAnimator.play("spawn")
 		%Cerberus.visible = true
 		CameraAnimator.play("ZoomOut")
@@ -178,7 +184,7 @@ func _on_card_played(card_to_play: BaseCard) -> void:
 	card_to_play.play_card(enemy,player)
 	CardController.discard(card_to_play.underlying_card)
 	print("Discard:", CardController.discard_deck.deck_list.size())
-	card_to_play.visible = false
+	card_to_play.get_parent().visible = false
 
 func _on_card_on_played(myself: Variant) -> void:
-	pass # Replace with function body.
+	_on_card_played(myself)

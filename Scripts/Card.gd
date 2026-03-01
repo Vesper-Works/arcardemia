@@ -51,4 +51,5 @@ class BasicDefend extends Card:
 		player.gain_shield(10)
 		if augment != null:
 			augment.play(enemy, player)
-		
+		print("test break point")
+
