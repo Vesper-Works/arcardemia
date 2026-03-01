@@ -110,10 +110,11 @@ func _on_end_turn():
 		
 	else:
 		if enemy.health <= 0:
+			battle_ui.visible = false
 			LootCutsceneStart()
 		else:
-			print("player shield at end turn:", player.shield)
 			player.take_damage(enemy.strength)
+			player.shield = 0
 			CardController.new_player_hand()
 			main_hud.show_hand(CardController.player_hand.deck_list)
 	
