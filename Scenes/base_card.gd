@@ -8,14 +8,18 @@ signal on_played(myself)
 @onready var card_art: TextureRect = %CardArt
 @onready var card_description: Label = %CardDescription
 @onready var card_suit: Label = %CardSuit
-
+var underlying_card : Card
 var click_start_time : int = 0
 var initial_mouse_offset : Vector2
 func _ready() -> void:
 	print("hi")
 	pass
+	
+func play_card(enemy, player):
+	underlying_card.play(enemy, player)
 
 func style_to_card(card : Card):
+	underlying_card = card
 	card_title.text = card.name
 	card_description.text = card.description
 	card_art.texture = card.texture
@@ -30,6 +34,7 @@ func style_to_card(card : Card):
 		Card.CardSuit.none:
 			card_suit.text = ""	
 	pass
+	
 
 
 func _on_gui_input(event: InputEvent) -> void:
