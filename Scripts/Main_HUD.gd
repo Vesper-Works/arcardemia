@@ -42,3 +42,5 @@ func add_card_to_hand(card_to_show: Card):
 			i.visible = true
 			return true
 	return false
+
+	

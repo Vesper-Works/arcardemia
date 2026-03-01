@@ -56,10 +56,11 @@ func LootPhase():
 	if player_deck.has_basic():
 		deckcard1 = player_deck.get_basic() #retrieve and pop card from deck
 		Reward1 = Loot.generate_augment(deckcard1) #give it an augment
-		
+		Reward1.upgrade_suit()
 	else: # generate a new basic card
 		deckcard1 = Loot.generate_basic_card()
 		Reward1 = deckcard1
+
 		
 	
 	#option 2 tries to upgrade an augment, returns basic augment if false
@@ -173,9 +174,11 @@ func _on_cerberus_animator_animation_finished(anim_name: StringName) -> void:
 
 
 
-func _on_card_played(card_to_play: Variant) -> void:
+func _on_card_played(card_to_play: BaseCard) -> void:
 	card_to_play.play_card(enemy,player)
-
+	CardController.discard(card_to_play.underlying_card)
+	print("Discard:", CardController.discard_deck.deck_list.size())
+	card_to_play.visible = false
 
 func _on_card_on_played(myself: Variant) -> void:
 	pass # Replace with function body.

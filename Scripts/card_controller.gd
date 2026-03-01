@@ -52,8 +52,15 @@ func new_player_hand() -> void:
 			else:
 				player_hand.add_card(player_deck.draw(player_deck.deck_list.size()))
 
-func _on_played(card: Card):
-	pass
+func discard(card: Card):
+	var i = player_hand.deck_list.find(card)  # returns index or -1
+	if i != -1:
+		discard_deck.deck_list.append(player_hand.deck_list.pop_at(i))
+	else:
+		printerr("couldn't find card to discard")
+
+
+	
 #func DrawCards():
 	
 	#var empty_slots: Array[CardSlot] = []
