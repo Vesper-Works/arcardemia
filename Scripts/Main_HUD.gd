@@ -16,7 +16,8 @@ func _process(delta: float) -> void:
 	pass
 
 func clear_hand():
-	print("lol")
+	for i in card_slots:
+		i.visible = false
 
 func _on_draw_button_pressed() -> void:
 	print("Draw Button Pressed")
