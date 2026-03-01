@@ -52,4 +52,3 @@ class BasicDefend extends Card:
 		if augment != null:
 			augment.play(enemy, player)
 		print("test break point")
-

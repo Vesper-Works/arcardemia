@@ -5,3 +5,4 @@ class Cerberous extends Creature:
 		max_health = 150
 		health = max_health
 		strength = 15
+		name = "Cerberus"

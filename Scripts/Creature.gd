@@ -4,6 +4,7 @@ var health : int
 var max_health : int
 var shield : int = 0
 var strength : int
+var name : String
 
 # called when a player or enemy takes damage
 func take_damage(amount):

@@ -831,7 +831,7 @@ offset_left = 43.0
 offset_top = 9.0
 offset_right = 134.0
 offset_bottom = 26.0
-text = "Health: 70/70"
+text = "Health: 0/70"
 
 [node name="DeathScreen" type="ColorRect" parent="MainHUD" unique_id=1389164074]
 unique_name_in_owner = true
@@ -865,6 +865,41 @@ offset_right = 615.1111
 offset_bottom = 435.1111
 text = "Try Again"
 script = ExtResource("8_vy5pj")
+
+[node name="ShieldLabel" type="Label" parent="MainHUD" unique_id=806960523]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 43.0
+offset_top = 26.0
+offset_right = 102.0
+offset_bottom = 43.0
+text = "Shield: 0"
+
+[node name="EHealthLabel" type="Label" parent="MainHUD" unique_id=374407418]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -18.0
+offset_top = 42.0
+offset_right = 22.0
+offset_bottom = 59.0
+grow_horizontal = 2
+text = "HP: 0"
+
+[node name="EName" type="Label" parent="MainHUD" unique_id=2088566850]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -30.0
+offset_top = 22.0
+offset_right = 30.0
+offset_bottom = 39.0
+grow_horizontal = 2
+text = "Cerberus"
 
 [node name="GameController" type="Control" parent="." unique_id=1436550499]
 unique_name_in_owner = true
