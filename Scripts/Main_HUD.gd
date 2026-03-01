@@ -1,9 +1,9 @@
 extends Control
 # handles all visuals
 
-@onready var controller: Node = $CardController
-@onready var draw_window: Control = $DrawWindow
-@onready var discard_window: Control = $DiscardWindow
+@onready var controller: Node = %CardController
+@onready var draw_window: Control = %DrawWindow
+@onready var discard_window: Control = %DiscardWindow
 @onready var card_slots: Array[CenterContainer] = [%CardSlot1, %CardSlot2, %CardSlot3, %CardSlot4, %CardSlot5, %CardSlot6, %CardSlot7, %CardSlot8]
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

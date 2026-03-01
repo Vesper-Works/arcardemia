@@ -57,6 +57,13 @@ class PlayerDeck extends Deck:
 				return true
 				
 		return false
+
+	func has_augment() -> bool:
+		for i in deck_list:
+			if i.suit != Card.CardSuit.none:
+				return true
+					
+		return false
 		
 	func get_basic() -> Card:
 		var select: Card = null
@@ -66,9 +73,20 @@ class PlayerDeck extends Deck:
 				select = i
 				deck_list.pop_at(pos)
 				break
-		
+		print ("found basic card:", select)
 		return select
 		
+	func get_augmented() -> Card:
+		var select: Card = null
+		for i in deck_list:
+			if i.suit != Card.CardSuit.none:
+				var pos = deck_list.find(i)
+				select = i
+				deck_list.pop_at(pos)
+				break
+		print ("found augmented card:", select)
+		return select
+
 class Discard extends Deck:
 	
 	func view():
