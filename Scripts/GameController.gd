@@ -43,34 +43,34 @@ func LootPhase():
 	%LootUI.visible = true
 	#pick a card from the deck
 	
-	var deckcard1: Card = null
-	var deckcard2: Card = null
+	deckcard1 = null
+	deckcard2 = null
 	
-	var Reward1: Card = null
-	var Reward2: Card = null
-	var Reward3: Card = Loot.generate_basic_card()
-	
-	if player_deck.has_basic():
-		deckcard1 = player_deck.get_basic()
-		Reward1 = Loot.generate_augment(deckcard1)
-	else:
-		Reward1 = Loot.generate_basic_card()
-		
-	if player_deck.has_basic():
-		deckcard2 = player_deck.get_basic()
-		Reward2 = Loot.generate_augment(deckcard2)
-	else:
-		Reward2 = Loot.generate_basic_card()
+	Reward1 = null
+	#Reward2 = null
+	#Reward3 = Loot.generate_basic_card()
+	#
+	#if player_deck.has_basic():
+		#deckcard1 = player_deck.get_basic()
+		#Reward1 = Loot.generate_augment(deckcard1)
+	#else:
+		#Reward1 = Loot.generate_basic_card()
+		#
+	#if player_deck.has_basic():
+		#deckcard2 = player_deck.get_basic()
+		#Reward2 = Loot.generate_augment(deckcard2)
+	#else:
+		#Reward2 = Loot.generate_basic_card()
 	
 
 	#if deckcard1 != null:
 	#	player_deck.add_card(deckcard1)
 	#if deckcard2 != null:
 	#	player_deck.add_card(deckcard2)
-	
-	%Option1Card.style_to_card(Reward1)
-	%Option2Card.style_to_card(Reward2)
-	%Option3Card.style_to_card(Reward3)
+	#
+	#%Option1Card.style_to_card(Reward1)
+	#%Option2Card.style_to_card(Reward2)
+	#%Option3Card.style_to_card(Reward3)
 	
 
 	
@@ -96,6 +96,7 @@ func play_death_animation():
 	print("dead, bleh.")
 	battle_ui.visible = false
 	Loot.visible = false
+	%DeathScreen.visible = true
 
 func LootCutsceneEnd():
 	CameraAnimator.play_backwards("ZoomOnBox")	#PillarAnimator.play_backwards("Raise")
@@ -122,29 +123,31 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 func _on_loot_selected(option: int) -> void:
 	print("option selected: ", option)
 	%LootUI.visible = false
-	
-	match option:
-		1: 
-			player_deck.deck_list.append(Reward1)
-			player_deck.deck_list.append(deckcard2)
-		2:
-			player_deck.deck_list.append(Reward2)
-			player_deck.deck_list.append(deckcard1)
-		3:
-			player_deck.deck_list.append(deckcard1)
-			player_deck.deck_list.append(deckcard2)
-			player_deck.deck_list.append(Reward3)
+	#
+	#match option:
+		#1: 
+			#player_deck.deck_list.append(Reward1)
+			#player_deck.deck_list.append(deckcard2)
+		#2:
+			#player_deck.deck_list.append(Reward2)
+			#player_deck.deck_list.append(deckcard1)
+		#3:
+			#player_deck.deck_list.append(deckcard1)
+			#player_deck.deck_list.append(deckcard2)
+			#player_deck.deck_list.append(Reward3)
 			
 	LootCutsceneEnd()
 
 
 func _on_cerberus_animator_animation_finished(anim_name: StringName) -> void:
 	%BattleUI.visible = true
+	CardController.new_player_hand()
+	main_hud.show_hand(CardController.player_hand.deck_list)
 
 
 
 func _on_card_played(card_to_play: Variant) -> void:
-	card_to_play.play(enemy,player)
+	card_to_play.play_card(enemy,player)
 
 
 func _on_card_on_played(myself: Variant) -> void:

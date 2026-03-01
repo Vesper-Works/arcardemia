@@ -12,7 +12,6 @@ var underlying_card : Card
 var click_start_time : int = 0
 var initial_mouse_offset : Vector2
 func _ready() -> void:
-	print("hi")
 	pass
 	
 func play_card(enemy, player):

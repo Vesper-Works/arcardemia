@@ -37,5 +37,5 @@ class BasicDefend extends Card:
 		texture = preload("uid://d1ecyrmtogs7c")
 		
 	func play(enemy, player):
-		player.shield(10)
+		player.gain_shield(10)
 		
