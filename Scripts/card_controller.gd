@@ -48,7 +48,8 @@ func new_player_hand() -> void:
 			
 			if player_deck.deck_list.size() <= remaining:
 				player_hand.add_card(player_deck.draw(remaining))
-				
+				print("test arg: remaining")
+				remaining = 0
 			else:
 				player_hand.add_card(player_deck.draw(player_deck.deck_list.size()))
 

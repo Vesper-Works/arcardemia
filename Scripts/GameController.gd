@@ -95,8 +95,6 @@ func LootPhase():
 func _on_end_turn():
 	main_hud.clear_hand()
 	
-	player.take_damage(enemy.strength)
-	%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 	if player.health <= 0:
 		play_death_animation()
 		
@@ -104,6 +102,8 @@ func _on_end_turn():
 		if enemy.health <= 0:
 			LootCutsceneStart()
 		else:
+			player.take_damage(enemy.strength)
+			%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 			CardController.new_player_hand()
 			main_hud.show_hand(CardController.player_hand.deck_list)
 	
@@ -178,7 +178,7 @@ func _on_card_played(card_to_play: BaseCard) -> void:
 	card_to_play.play_card(enemy,player)
 	CardController.discard(card_to_play.underlying_card)
 	print("Discard:", CardController.discard_deck.deck_list.size())
-	card_to_play.visible = false
+	card_to_play.get_parent().visible = false
 
 func _on_card_on_played(myself: Variant) -> void:
-	pass # Replace with function body.
+	_on_card_played(myself)
