@@ -2,7 +2,7 @@ extends Node
 
 
 var augment_pool: Dictionary[int, Script] = {
-#	1: AugmentDraw,
+	1: AugmentDraw,
 	2: AugmentDamageStack,
 	3: AugmentShield,
 	4: AugmentDamage

@@ -7,5 +7,5 @@ func _init():
 	description ="AUGMENT: Deals 50 damage."
 
 func play(enemy, player):
-	enemy.takedamage(50)
+	enemy.take_damage(50)
 	
