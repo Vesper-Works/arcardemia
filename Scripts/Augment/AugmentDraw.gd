@@ -7,4 +7,4 @@ func _init():
 	description ="AUGMENT: draws 1 card"
 
 func play(enemy, player):
-	player.draw(1)
+	pass
