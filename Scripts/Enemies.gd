@@ -1,6 +1,7 @@
 @abstract class_name Enemy
 
 class Cerberous extends Creature:
-	func _ready():
-		max_health = 20
+	func _init():
+		max_health = 150
 		health = max_health
+		strength = 15

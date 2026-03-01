@@ -15,21 +15,17 @@ extends Node
 @onready var deckcard1 = null
 @onready var deckcard2 = null
 @onready var enemy: Creature
+@onready var battle_ui: Control = %BattleUI
+
 var player: Creature = Player.new()
 
 var loot_option: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#CameraAnimator.play("ZoomOnBox")
-	#LootCutsceneStart()
-	#enemy = Enemy.Cerberous.new()
-	await get_tree().create_timer(1.0).timeout
-	CardController.new_player_hand()
-	main_hud.show_hand(CardController.player_hand.deck_list)
 	CameraAnimator.play("ZoomOnBox")
 	LootCutsceneStart()
-	#enemy = Enemy.Cerberous.new()
+	enemy = Enemy.Cerberous.new()
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -144,3 +140,12 @@ func _on_loot_selected(option: int) -> void:
 
 func _on_cerberus_animator_animation_finished(anim_name: StringName) -> void:
 	%BattleUI.visible = true
+
+
+
+func _on_card_played(card_to_play: Variant) -> void:
+	card_to_play.play(enemy,player)
+
+
+func _on_card_on_played(myself: Variant) -> void:
+	pass # Replace with function body.
