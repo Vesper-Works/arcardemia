@@ -111,6 +111,10 @@ func _on_end_turn():
 	else:
 		if enemy.health <= 0:
 			battle_ui.visible = false
+			player_deck.add_card(CardController.discard_deck.draw("all"))
+			player_deck.add_card(CardController.player_hand.draw("all"))
+			main_hud.clear_hand()
+			enemy = Enemy.Cerberous.new()
 			LootCutsceneStart()
 		else:
 			player.take_damage(enemy.strength)
