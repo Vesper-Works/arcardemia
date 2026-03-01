@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://cm78mleetbh0k"]
+
+[ext_resource type="Script" uid="uid://b2tvl2fp42e6g" path="res://Scripts/main_menu.gd" id="1_48xlc"]
+[ext_resource type="PackedScene" uid="uid://bb6reldvs8sfo" path="res://Assets/Models/Python.glb" id="2_1ehe0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_48xlc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1ehe0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ce3w2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n45e2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opfnp"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_48xlc"]
+turbidity = 0.0
+sun_disk_scale = 0.0
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_1ehe0"]
+sky_material = SubResource("PhysicalSkyMaterial_48xlc")
+
+[sub_resource type="Environment" id="Environment_48xlc"]
+background_mode = 2
+sky = SubResource("Sky_1ehe0")
+ambient_light_source = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.23882264, 0.17193049, 0.3407182, 1)
+fog_light_energy = 8.69
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 8.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.3571
+volumetric_fog_albedo = Color(0.93783736, 0.8511664, 0.790161, 1)
+
+[node name="MainMenu" type="Node3D" unique_id=634858398]
+script = ExtResource("1_48xlc")
+
+[node name="Python" parent="." unique_id=57102881 instance=ExtResource("2_1ehe0")]
+
+[node name="LookAtModifier3D" type="LookAtModifier3D" parent="Python/Armature/Skeleton3D" parent_id_path=PackedInt32Array(57102881, 2112321206) index="1" unique_id=789581741]
+target_node = NodePath("../../../../Camera3D")
+bone_name = "Bone.001"
+bone = 1
+forward_axis = 2
+primary_rotation_axis = 2
+origin_offset = Vector3(0, 3.66, 0)
+
+[node name="Control" type="Control" parent="." unique_id=106194546]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="Control" unique_id=599537455]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 87
+theme_override_styles/normal = SubResource("StyleBoxEmpty_48xlc")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1ehe0")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_ce3w2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_n45e2")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_opfnp")
+text = "Open the box"
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=376975819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3841858e-07, 1.7463493, 4.191682)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=141862882]
+environment = SubResource("Environment_48xlc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1948038633]
+transform = Transform3D(-1, 0, -8.742278e-08, -4.371139e-08, 0.8660254, 0.5, 7.5710346e-08, 0.5, -0.8660254, 0, 0, 0)
+
+[connection signal="pressed" from="Control/Button" to="." method="_on_button_pressed"]
+
+[editable path="Python"]

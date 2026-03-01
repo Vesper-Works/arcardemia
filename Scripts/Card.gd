@@ -49,7 +49,7 @@ class BasicDefend extends Card:
 		
 	func play(enemy, player):
 		print("playing shield, player = ", player)
-		player.gain_shield(10)
+		player.gain_shield(5)
 		print("player shield: ", player.shield)
 		if augment != null:
 			augment.play(enemy, player, suit)

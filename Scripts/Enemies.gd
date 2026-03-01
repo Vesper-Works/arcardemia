@@ -2,7 +2,7 @@
 
 class Cerberous extends Creature:
 	func _init():
-		max_health = 150
+		max_health = 650
 		health = max_health
-		strength = 15
+		strength = 20
 		name = "Cerberus"

@@ -450,6 +450,30 @@ _data = {
 &"spawn": SubResource("Animation_1p5hy")
 }
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_4kpch"]
+turbidity = 0.0
+sun_disk_scale = 0.0
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_1ehe0"]
+sky_material = SubResource("PhysicalSkyMaterial_4kpch")
+
+[sub_resource type="Environment" id="Environment_grg3l"]
+background_mode = 2
+sky = SubResource("Sky_1ehe0")
+ambient_light_source = 3
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.23882264, 0.17193049, 0.3407182, 1)
+fog_light_energy = 0.12
+fog_density = 1.0
+fog_depth_curve = 6.2766595
+fog_depth_begin = 0.0
+fog_depth_end = 12.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0136
+volumetric_fog_albedo = Color(0.93783736, 0.8511664, 0.790161, 1)
+
 [node name="Main" type="Node3D" unique_id=2080635114]
 script = ExtResource("1_idj7w")
 
@@ -1201,6 +1225,17 @@ skeleton = NodePath("..")
 [node name="CerberusAnimator" type="AnimationPlayer" parent="Cerberus" unique_id=1138667355]
 unique_name_in_owner = true
 libraries/ = SubResource("AnimationLibrary_h1m7h")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=19181821]
+environment = SubResource("Environment_grg3l")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1446553102]
+transform = Transform3D(-1, 1.776357e-15, -8.7422784e-08, -8.590926e-08, -0.18527219, 0.98268723, -1.6197014e-08, 0.98268723, 0.18527219, 0, 3.083828, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1768605380]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.1047664, -4.32603)
+light_color = Color(1, 0.83137256, 1, 1)
+light_energy = 5.662
 
 [connection signal="animation_finished" from="Scene/BoxAnimator" to="GameController" method="_on_animation_player_animation_finished"]
 [connection signal="pressed" from="MainHUD/BattleUI/DrawButton" to="MainHUD" method="_on_draw_button_pressed"]
