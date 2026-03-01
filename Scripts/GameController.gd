@@ -111,6 +111,7 @@ func _on_end_turn():
 	else:
 		if enemy.health <= 0:
 			battle_ui.visible = false
+			player.shield = 0
 			player_deck.add_card(CardController.discard_deck.draw("all"))
 			player_deck.add_card(CardController.player_hand.draw("all"))
 			main_hud.clear_hand()

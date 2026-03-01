@@ -42,8 +42,8 @@ func add_card(cards_to_add: Array[Card]):
 class PlayerDeck extends Deck:
 	
 	func _init():
-		for i in 5:
-			if i >= 3:
+		for i in 10:
+			if i >= 5:
 				deck_list.append(Card.BasicAttack.new())
 			else:
 				deck_list.append(Card.BasicDefend.new())
