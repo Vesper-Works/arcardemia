@@ -8,6 +8,7 @@ var strength : int
 # called when a player or enemy takes damage
 func take_damage(amount):
 	# first deals damage to the shield
+	print("shield on takedamage: ", shield)
 	if shield > 0:
 		if amount >= shield:
 			amount -= shield

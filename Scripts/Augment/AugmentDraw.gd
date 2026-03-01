@@ -4,7 +4,12 @@ extends Augment
 
 func _init():
 	Name = "DRAW:"
-	description ="AUGMENT: draws 1 card"
 
-func play(enemy, player):
-	player.draw(1)
+
+func play(enemy, player, suit):
+	pass
+
+func get_description() -> String:
+	if attached_to == null:
+		return "AUGMENT: Deals ??? damage."
+	return "AUGMENT: Draws %d cards." % (1 * attached_to.suit)

@@ -36,9 +36,9 @@ class BasicAttack extends Card:
 		texture = preload("uid://b02bqxg8taui5")
 		
 	func play(enemy, player):
-		enemy.take_damage(10)
+		enemy.take_damage(50)
 		if augment != null:
-			augment.play(enemy, player)
+			augment.play(enemy, player, suit)
 		
 class BasicDefend extends Card:
 	func _init():
@@ -48,8 +48,9 @@ class BasicDefend extends Card:
 		texture = preload("uid://d1ecyrmtogs7c")
 		
 	func play(enemy, player):
+		print("playing shield, player = ", player)
 		player.gain_shield(10)
+		print("player shield: ", player.shield)
 		if augment != null:
-			augment.play(enemy, player)
+			augment.play(enemy, player, suit)
 		print("test break point")
-

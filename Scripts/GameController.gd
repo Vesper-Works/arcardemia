@@ -107,6 +107,7 @@ func _on_end_turn():
 		if enemy.health <= 0:
 			LootCutsceneStart()
 		else:
+			print("player shield at end turn:", player.shield)
 			player.take_damage(enemy.strength)
 			%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 			CardController.new_player_hand()

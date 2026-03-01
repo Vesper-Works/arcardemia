@@ -2,7 +2,7 @@ extends Node
 
 
 var augment_pool: Dictionary[int, Script] = {
-#	1: AugmentDraw,
+	1: AugmentDraw,
 	2: AugmentDamageStack,
 	3: AugmentShield,
 	4: AugmentDamage
@@ -28,6 +28,7 @@ func generate_augment(card: Card):
 	var augment: Augment = augment_pool[i].new()
 	
 	card.augment = augment
+	card.augment.attached_to = card
 	return card
 		
 

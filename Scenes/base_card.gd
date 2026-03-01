@@ -25,7 +25,7 @@ func style_to_card(card : Card):
 	underlying_card = card
 	card_title.text = card.name
 	if card.augment != null:
-		card_description.text = card.description + "\n " + card.augment.description
+		card_description.text = card.description + "\n " + card.augment.get_description()
 	else:
 		card_description.text = card.description
 	card_art.texture = card.texture
