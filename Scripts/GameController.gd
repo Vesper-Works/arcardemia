@@ -34,6 +34,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	%HealthLabel.text = "HP: %d/%d" %[player.health,player.max_health]
+	%ShieldLabel.text = "Shield: %d" % [player.shield]
+	if enemy != null:
+		%EName.text = "%s"%enemy.name
+		%EHealthLabel.text = "HP: %d/%d" %[enemy.health,enemy.max_health]
 	pass
 
 func LootCutsceneStart():
@@ -109,7 +114,6 @@ func _on_end_turn():
 		else:
 			print("player shield at end turn:", player.shield)
 			player.take_damage(enemy.strength)
-			%HealthLabel.text = "Health: %d/%d" % [player.health, player.max_health]
 			CardController.new_player_hand()
 			main_hud.show_hand(CardController.player_hand.deck_list)
 	

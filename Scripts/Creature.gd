@@ -4,6 +4,7 @@ var health : int
 var max_health : int
 var shield : int = 0
 var strength : int
+var name : String
 
 # called when a player or enemy takes damage
 func take_damage(amount):
@@ -14,8 +15,8 @@ func take_damage(amount):
 			amount -= shield
 			shield = 0
 		else:
-			amount = 0
 			shield -= amount
+			amount = 0
 	# then deals damage to the health
 	if amount >= health:
 		health = 0
