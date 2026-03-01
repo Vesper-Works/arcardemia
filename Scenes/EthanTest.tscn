@@ -25,6 +25,8 @@ shadow_normal_bias = 10.0
 shadow_reverse_cull_face = true
 shadow_blur = 10.0
 
+[node name="FatGuy" parent="Scene" unique_id=1402030523 instance=ExtResource("3_dq276")]
+
 [node name="Control" type="Control" parent="." unique_id=1117086792]
 layout_mode = 3
 anchors_preset = 15
@@ -72,18 +74,5 @@ layout_mode = 2
 [node name="Button" type="Button" parent="Control/HBoxContainer/CenterContainer3" unique_id=1936075700]
 layout_mode = 2
 
-[node name="FatGuy" parent="." unique_id=2063144618 instance=ExtResource("3_dq276")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.213521, 0, 0.376494)
-
-[node name="Skeleton3D" parent="FatGuy/Armature" parent_id_path=PackedInt32Array(2063144618, 92176265) index="0" unique_id=1636777944]
-bones/1/rotation = Quaternion(-0.080004334, -0.11236434, -0.57166743, 0.80880773)
-bones/3/rotation = Quaternion(0.56715244, 0.023509258, -0.18471323, 0.80228823)
-bones/4/rotation = Quaternion(0.34590447, -0.031132845, -0.14930461, 0.925791)
-bones/6/rotation = Quaternion(-0.47702864, 0.033583168, 0.15706064, 0.8640878)
-bones/7/rotation = Quaternion(-0.514156, -0.07339782, -0.019739354, 0.8543224)
-bones/9/rotation = Quaternion(0.52234006, -0.13258871, 0.32551962, 0.77692866)
-bones/10/rotation = Quaternion(0.7693611, 0.47917494, 0.24897352, -0.34130237)
-bones/11/rotation = Quaternion(0.26899716, 0.057724297, -0.63981116, 0.7176003)
-
 [editable path="Scene"]
-[editable path="FatGuy"]
+[editable path="Scene/FatGuy"]
