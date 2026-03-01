@@ -9,6 +9,10 @@ extends Node
 @onready var CardController: Control = %CardController
 @onready var main_hud: Control = %MainHUD
 @onready var player_deck: Deck = CardController.player_deck
+const SOUND_PILLAR_RAISE = preload("uid://cfg5mk6drs0si")
+const SOUND_OPEN_BOX = preload("uid://o782dlph0i88")
+const SOUND_END_OF_OPEN = preload("uid://cvlppc5osj2y1")
+
 var Reward1: Card
 var Reward2: Card
 var Reward3: Card
@@ -36,7 +40,8 @@ func LootCutsceneStart():
 
 	PillarAnimator.play("Raise")
 	PillarAnimator.queue("Open")
-
+	await get_tree().process_frame
+	AudioPlayer.play_queue([SOUND_PILLAR_RAISE, SOUND_OPEN_BOX, SOUND_END_OF_OPEN])
 	
 func LootPhase():
 	state = "Loot"
@@ -130,6 +135,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		LootPhase()
 	if anim_name == "Close":
 		PillarAnimator.play_backwards("Lower")
+		AudioPlayer.play(SOUND_PILLAR_RAISE)
 		DogAnimator.play("spawn")
 		%Cerberus.visible = true
 		CameraAnimator.play("ZoomOut")

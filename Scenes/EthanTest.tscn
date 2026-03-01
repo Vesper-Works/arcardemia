@@ -11,7 +11,10 @@
 [node name="Torus" parent="Scene" index="0" unique_id=1024780650]
 transform = Transform3D(-15.796844, 0, 0, 0, -40.87561, 0, 0, 0, -15.796844, 0.001001358, -0.0068137646, -9.846687e-05)
 
-[node name="Pandora\'s Box" parent="Scene/Pillar" parent_id_path=PackedInt32Array(1305138398, 1192649282) index="1" unique_id=1235338360]
+[node name="Pillar" parent="Scene" index="2" unique_id=1192649282]
+transform = Transform3D(0.31496516, 0, 0, 0, 2.0463064, 0, 0, 0, 0.31496516, 0, 1, 0)
+
+[node name="Pandora\'s Box" parent="Scene/Pillar" index="1" unique_id=1235338360]
 "blend_shapes/Key 3" = 1.0
 
 [node name="Point" parent="Scene/Pillar/Pandora\'s Box" index="0" unique_id=1825681055]
@@ -26,6 +29,7 @@ shadow_reverse_cull_face = true
 shadow_blur = 10.0
 
 [node name="FatGuy" parent="Scene" unique_id=1402030523 instance=ExtResource("3_dq276")]
+transform = Transform3D(0.9999682, 0, -0.00797607, 0, 1, 0, 0.00797607, 0, 0.9999682, 0, 0, 0)
 
 [node name="Control" type="Control" parent="." unique_id=1117086792]
 layout_mode = 3
