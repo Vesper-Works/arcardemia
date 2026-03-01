@@ -20,7 +20,10 @@ func play_card(enemy, player):
 func style_to_card(card : Card):
 	underlying_card = card
 	card_title.text = card.name
-	card_description.text = card.description
+	if card.augment != null:
+		card_description.text = card.description + "\n " + card.augment.description
+	else:
+		card_description.text = card.description
 	card_art.texture = card.texture
 	match card.suit:
 		

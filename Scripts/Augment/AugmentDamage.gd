@@ -4,6 +4,8 @@ extends Augment
 
 func _init():
 	Name = "damage:"
+	description ="AUGMENT: Deals 50 damage."
 
-func play():
-	pass
+func play(enemy, player):
+	enemy.takedamage(50)
+	

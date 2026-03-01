@@ -37,8 +37,8 @@ class BasicAttack extends Card:
 		
 	func play(enemy, player):
 		enemy.take_damage(10)
-		#if augment is not null:
-		#	augment.play
+		if augment != null:
+			augment.play(enemy, player)
 		
 class BasicDefend extends Card:
 	func _init():
@@ -49,6 +49,6 @@ class BasicDefend extends Card:
 		
 	func play(enemy, player):
 		player.gain_shield(10)
-		#if augment is not null:
-			#augment.play
+		if augment != null:
+			augment.play(enemy, player)
 		

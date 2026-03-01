@@ -3,7 +3,7 @@ extends Node
 
 
 var Name
-var Description 
+var description 
 var Grade
 
-@abstract func play()
+@abstract func play(enemy, player)
