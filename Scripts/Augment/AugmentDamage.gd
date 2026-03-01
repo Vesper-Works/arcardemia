@@ -6,7 +6,7 @@ func _init():
 	Name = "damage:"
 
 func play(enemy, player, suit):
-	enemy.takedamage(25*suit)
+	enemy.take_damage(25*suit)
 	
 func get_description() -> String:
 	if attached_to == null:
